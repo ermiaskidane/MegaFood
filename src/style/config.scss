@@ -1,0 +1,32 @@
+$font-primary: "Nunito", sans-serif;
+$font-display: "Josefin Sans", sans-serif;
+
+$font-secondary: "Habibi", serif;
+
+$color-white: #fff;
+$color-dark: #000;
+$color-light-gray-1: #dfe6e9;
+$color-light-green-1: #83b735;
+$color-light-black-1: #1e1e1e;
+$color-gray-dark: #343a40;
+$color-gray-dark-1: #333333;
+$color-grey-dark-2: #9da1a5;
+$color-grey-dark-3: #aaa;
+$color-grey-dark-4: #cecece;
+
+$color-primary-1: #b4adcc;
+$color-primary-2: #625499;
+$color-primary-3: #a9f7ff;
+// $color-primary-4: #ff9369;
+$color-primary-4: #ea8025;
+$color-primary-5: #cc7e72;
+$color-primary-6: #2a3e40;
+$color-primary-7: #64abb3;
+
+// RESPONSIVE BREAKPOINTS
+$bp-large: 70em; //  1120/16px = 70em;
+$bp-medium: 61.25em; // 980/16px = 61.25em;
+$bp-medium1: 52.5em; // 840/16px = 52.5em;
+$bp-smaller: 43.75em; // 700/16px= 43.75em;
+$bp-small: 37.5em; // 600/16px = 37.5em;
+$bp-smallest: 36.062em; // 577/16px = 36.062em;

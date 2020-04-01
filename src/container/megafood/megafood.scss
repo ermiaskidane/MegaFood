@@ -1,0 +1,14 @@
+@import "../../style/config";
+
+.megafood {
+  display: grid;
+  grid-template-rows: 45vw repeat(5, min-content);
+  grid-template-columns:
+    [full-start] minmax(2rem, 1fr) [center-start] repeat(
+      12,
+      [col-start] minmax(min-content, 10rem) [col-end]
+    )
+    [center-end]
+    minmax(2rem, 1fr)
+    [full-end];
+}

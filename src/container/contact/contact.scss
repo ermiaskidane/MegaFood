@@ -1,0 +1,132 @@
+@import "../../style/config";
+.contact {
+  margin-top: 118.92px;
+  font-family: $font-secondary;
+  color: $color-light-black-1;
+
+  @media only screen and (max-width: $bp-medium) {
+    margin-top: 70px;
+  }
+
+  &__us--content {
+    padding: 3rem 0;
+  }
+
+  &__us--item1 {
+    margin: 0 1rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+
+    h2 {
+      font-size: 2.3rem;
+      font-weight: 500;
+      text-transform: capitalize;
+
+      @media only screen and (max-width: $bp-medium1) {
+        font-size: 2rem;
+      }
+
+      @media only screen and (max-width: $bp-small) {
+        font-size: 1.8rem;
+      }
+    }
+
+    #map {
+      margin-top: 3rem;
+      border: 1px solid $color-white;
+      height: 80vh;
+      width: 100%;
+    }
+  }
+
+  &__us--item2 {
+    padding: 3rem 4rem;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @media only screen and (max-width: $bp-medium1) {
+      grid-template-columns: 1fr;
+      grid-row-gap: 2rem;
+    }
+  }
+
+  &__us--address,
+  &__us--time,
+  &__us--specialist {
+    padding-bottom: 1rem;
+    h3 {
+      font-size: 23px;
+      font-weight: 500;
+      color: $color-dark;
+
+      @media only screen and (max-width: $bp-medium1) {
+        font-size: 20px;
+      }
+    }
+    p {
+      padding-top: 0.4rem;
+      color: #a8a8a8;
+      font-weight: 400;
+      line-height: 1.7;
+      font-size: 14px;
+
+      @media only screen and (max-width: $bp-medium1) {
+        font-size: 13px;
+      }
+    }
+  }
+
+  &__us--message {
+    align-self: flex-start;
+
+    input[type="text"],
+    input[type="email"] {
+      width: 95%;
+      padding: 1.1rem 14px;
+      border: 0.7px solid $color-grey-dark-4;
+
+      @media only screen and (max-width: $bp-medium1) {
+        font-size: 12px;
+      }
+    }
+    input:not(:last-of-type) {
+      margin-bottom: 1rem;
+    }
+    textarea {
+      width: 95%;
+      padding: 1.1rem 14px;
+      padding-bottom: 10rem;
+      font-family: sans-serif;
+      margin-bottom: 1rem;
+      border: 0.7px solid $color-grey-dark-4;
+
+      @media only screen and (max-width: $bp-medium1) {
+        font-size: 12px;
+      }
+    }
+
+    input[type="submit"] {
+      width: 40%;
+      padding: 1.1rem 14px;
+      font-size: 1.3rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      border: 0.7px solid $color-grey-dark-4;
+      background-color: $color-dark;
+      color: $color-white;
+      cursor: pointer;
+
+      @media only screen and (max-width: $bp-medium1) {
+        font-size: 12px;
+      }
+    }
+
+    input[type="submit"]:hover {
+      background-color: $color-primary-4;
+    }
+  }
+}

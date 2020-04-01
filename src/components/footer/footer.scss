@@ -1,0 +1,192 @@
+@import "../../style/config";
+.footer {
+  grid-column: full-start/full-end;
+  padding-top: 3.5rem;
+
+  margin-bottom: 4rem;
+
+  background: $color-gray-dark-1;
+
+  font-family: $font-secondary;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__content--one {
+    padding: 0 1.2rem;
+    padding-bottom: 6rem;
+
+    border-bottom: 0.8px solid $color-grey-dark-3;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, min-content);
+
+    @media only screen and (max-width: $bp-medium) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-row-gap: 4rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      grid-template-columns: 1fr max-content 1fr;
+      grid-template-rows: repeat(4, 1fr);
+      justify-items: center;
+      grid-row-gap: 1.6rem;
+    }
+
+    h3 {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      padding-bottom: 1rem;
+      color: $color-white;
+
+      @media only screen and (max-width: $bp-small) {
+        text-align: center;
+      }
+    }
+
+    ul {
+      list-style: none;
+      color: $color-grey-dark-2;
+      font-size: 15px;
+
+      li:not(:last-of-type) {
+        padding-bottom: 8px;
+      }
+
+      p {
+        cursor: pointer;
+
+        @media only screen and (max-width: $bp-small) {
+          text-align: center;
+        }
+      }
+
+      p:hover {
+        color: $color-white;
+        transition: ease-in;
+      }
+    }
+  }
+  &__items--one,
+  &__items--two,
+  &__items--three,
+  &__items--four {
+    grid-row: 1/2;
+  }
+
+  &__items--one {
+    grid-column: 1/2;
+    @media only screen and (max-width: $bp-small) {
+      grid-column: 2/3;
+      grid-row: 1/2;
+      justify-self: start;
+      padding-left: 1rem;
+    }
+  }
+  &__items--two {
+    grid-column: 2/3;
+    @media only screen and (max-width: $bp-small) {
+      grid-column: 2/3;
+      grid-row: 2/3;
+      justify-self: center;
+      padding-left: 1rem;
+    }
+  }
+  &__items--three {
+    grid-column: 3/4;
+    @media only screen and (max-width: $bp-small) {
+      grid-column: 2/3;
+      grid-row: 3/4;
+      justify-self: center;
+      padding-left: 1rem;
+    }
+  }
+
+  &__items--four {
+    grid-column: 4/-1;
+  }
+
+  // ################## breaking point for Footer__items--four #################
+  &__items--four {
+    @media only screen and (max-width: $bp-medium) {
+      grid-column: 1/-1;
+      grid-row: 2/-1;
+      justify-self: center;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      grid-column: 1/-1;
+      grid-row: 4/-1;
+    }
+    h3 {
+      @media only screen and (max-width: $bp-medium) {
+        text-align: center;
+      }
+    }
+    p,
+    .footer__icons {
+      font-size: 15px;
+      @media only screen and (max-width: $bp-medium) {
+        margin: 0 auto;
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    color: $color-grey-dark-2;
+  }
+
+  form {
+    padding-top: 8px;
+    padding-bottom: 2rem;
+
+    @media only screen and (max-width: $bp-medium) {
+      width: 70vw;
+    }
+    input[type="email"] {
+      padding: 8px 3px;
+      width: 70%;
+    }
+
+    button {
+      padding: 8px 3px;
+      width: 20%;
+      background-color: $color-primary-4;
+      border-color: $color-primary-4;
+      border-style: solid;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: $color-white;
+      color: $color-primary-4;
+      border-color: $color-white;
+    }
+  }
+
+  &__icons {
+    svg {
+      width: 2.4rem;
+      height: 2.4rem;
+      padding-right: 1.2rem;
+      fill: #fff;
+      cursor: pointer;
+    }
+
+    svg:hover {
+      fill: $color-primary-4;
+      transition: ease-out;
+    }
+  }
+
+  &__content--two {
+    padding: 1.6rem 8px;
+    text-align: center;
+    color: $color-grey-dark-2;
+  }
+}

@@ -1,0 +1,57 @@
+@import "../../style/config";
+.purchase {
+  grid-column: center-start/center-end;
+  color: $color-light-black-1;
+  padding: 4rem 0;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  grid-gap: 1rem;
+
+  &__pizza,
+  &__wrap,
+  &__burger {
+    position: relative;
+    font-family: $font-secondary;
+    color: $color-white;
+  }
+
+  &__pizza img,
+  &__wrap img,
+  &__burger img {
+    width: 100%;
+    filter: brightness(70%);
+  }
+  & h2 {
+    position: absolute;
+    top: 3rem;
+    left: 35%;
+    font-size: 3rem;
+
+    @media only screen and (max-width: $bp-small) {
+      left: 33%;
+      font-size: 2.6rem;
+    }
+  }
+
+  & p {
+    position: absolute;
+    top: 9rem;
+    left: 40%;
+    font-size: 1rem;
+    text-transform: capitalize;
+    border: 1px solid $color-white;
+    padding: 4px 10px;
+
+    @media only screen and (max-width: $bp-small) {
+      top: 8rem;
+      left: 36%;
+      font-size: 0.9rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: $color-white;
+    }
+  }
+}

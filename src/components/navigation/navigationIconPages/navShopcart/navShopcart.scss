@@ -1,0 +1,100 @@
+@import "../../../../style/config";
+.navShopcart {
+  background: $color-white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 400px;
+  height: 100%;
+  z-index: 111;
+
+  font-family: $font-secondary;
+
+  @media only screen and (max-width: $bp-small) {
+    width: 300px;
+  }
+
+  &__detail {
+    display: flex;
+    flex-direction: column;
+
+    &--head {
+      display: grid;
+      grid-template-columns: max-content 1fr max-content;
+
+      svg:first-of-type {
+        width: 1.2rem;
+        height: 1.2rem;
+        padding: 10px 9px;
+        border-bottom: 1px solid $color-grey-dark-3;
+        border-right: 1px solid $color-grey-dark-3;
+      }
+
+      h3 {
+        border-bottom: 1px solid $color-grey-dark-3;
+        padding-top: 8px;
+        text-align: center;
+        color: $color-light-black-1;
+
+        font-weight: 600;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+
+        @media only screen and (max-width: $bp-small) {
+          font-size: 0.8rem;
+        }
+      }
+
+      svg:nth-of-type(2n) {
+        width: 0.8rem;
+        height: 0.8rem;
+        padding: 13px 11px;
+        border-left: 1px solid $color-grey-dark-3;
+        border-bottom: 1px solid $color-grey-dark-3;
+      }
+    }
+
+    &--content {
+      align-self: center;
+      padding-top: 12rem;
+
+      display: flex;
+      flex-direction: column;
+
+      h2 {
+        padding-bottom: 1.2rem;
+        color: $color-light-black-1;
+        font-weight: 300;
+
+        @media only screen and (max-width: $bp-small) {
+          font-size: 18px;
+        }
+      }
+
+      button {
+        width: 65%;
+        padding: 18px 0;
+        border: none;
+        margin: 0 auto;
+        background: $color-light-black-1;
+        transition: all 0.3s;
+        a {
+          text-decoration: none;
+          text-transform: uppercase;
+          color: $color-white;
+          font-family: $font-secondary;
+          font-size: 0.8rem;
+          font-weight: 600;
+
+          @media only screen and (max-width: $bp-small) {
+            font-size: 0.7rem;
+          }
+        }
+      }
+
+      button:hover {
+        background: $color-primary-4;
+      }
+    }
+  }
+}

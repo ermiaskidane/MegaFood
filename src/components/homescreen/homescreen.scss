@@ -1,0 +1,45 @@
+@import "../../style/config";
+.homescreen {
+  grid-column: full-start/full-end;
+  margin-top: 118.92px;
+
+  @media only screen and (max-width: $bp-medium) {
+    margin-top: 70px;
+  }
+
+  .homescreen__image {
+    position: relative;
+    background: $color-primary-2;
+    background-image: linear-gradient(
+        130deg,
+        rgba($color-light-black-1, 0.5),
+        rgba($color-light-black-1, 0.93)
+      ),
+      url(../../assets/images/pizza-5-Large.jpg);
+    background-size: cover;
+    background-clip: content-box;
+    background-position: center;
+
+    width: 100%;
+    height: 100%;
+  }
+
+  h1 {
+    text-transform: capitalize;
+    font-family: $font-secondary;
+    font-size: 3.6rem;
+    position: absolute;
+    top: 43%;
+    left: 38%;
+
+    color: $color-primary-4;
+
+    @media only screen and (max-width: $bp-small) {
+      display: none;
+    }
+    @media only screen and (max-width: $bp-smaller) {
+      left: 35%;
+      font-size: 3rem;
+    }
+  }
+}
