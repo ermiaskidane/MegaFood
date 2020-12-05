@@ -2,6 +2,8 @@
 
 # dependencies
 /node_modules
+
+node_modules/
 /src/hoc
 /src/style/utility.js
 /.pnp
@@ -17,6 +19,7 @@ note.txt
 
 # misc
 .DS_Store
+.env
 .env.local
 .env.development.local
 .env.test.local
