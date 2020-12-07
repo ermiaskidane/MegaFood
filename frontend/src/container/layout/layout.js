@@ -11,7 +11,7 @@ class Layout extends Component {
         <Navigation
           open={this.props.openHandler}
           search={this.props.searchBar}
-          singup={this.props.singup}
+          singin={this.props.singin}
           shopcart={this.props.shopcart}
         />
         <main>{this.props.children}</main>

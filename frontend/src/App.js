@@ -8,7 +8,7 @@ import Shop from "./container/shop/shop";
 import Feature from "./container/feature/feature";
 import Contact from "./container/contact/contact";
 import NavSearch from "./components/navigation/navigationIconPages/navSearch/navSearch";
-import NavSignup from "./components/navigation/navigationIconPages/navSignup/navSignup";
+import NavSignin from "./components/navigation/navigationIconPages/navSignin/navSignin";
 
 import NavShopcart from "./components/navigation/navigationIconPages/navShopcart/navShopcart";
 
@@ -20,7 +20,7 @@ class App extends Component {
   state = {
     modal: false,
     searchPage: false,
-    singup: false,
+    singin: false,
     shopcart: false
   };
 
@@ -40,10 +40,10 @@ class App extends Component {
     });
   };
 
-  singUpHandler = () => {
+  singInHandler = () => {
     this.setState(prevState => {
       return {
-        singup: !prevState.singup
+        singin: !prevState.singin
       };
     });
   };
@@ -60,13 +60,13 @@ class App extends Component {
     console.log(this.state.searchPage, "Searchpage");
     let modals = null;
     let page = null;
-    let singupPage = null;
+    let singinPage = null;
     let shopcartPage = null;
 
     if (this.state.modal) {
       modals = (
         <React.Fragment>
-          <Modal open={this.openHandler} singup={this.singUpHandler}/>
+          <Modal open={this.openHandler} singin={this.singInHandler}/>
           <Backdrop open={this.openHandler} />
         </React.Fragment>
       );
@@ -76,11 +76,11 @@ class App extends Component {
           <NavSearch show={this.searchBarHandler} />
         </React.Fragment>
       );
-    } else if (this.state.singup) {
-      singupPage = (
+    } else if (this.state.singin) {
+      singinPage = (
         <React.Fragment>
-          <NavSignup />
-          <Backdrop open={this.singUpHandler} />
+          <NavSignin />
+          <Backdrop open={this.singInHandler} />
         </React.Fragment>
       );
     } else if (this.state.shopcart) {
@@ -98,12 +98,12 @@ class App extends Component {
         <Layout
           openHandler={this.openHandler}
           searchBar={this.searchBarHandler}
-          singup={this.singUpHandler}
+          singin={this.singInHandler}
           shopcart={this.shopcartHandler}
         >
           {modals}
           {page}
-          {singupPage}
+          {singinPage}
           {shopcartPage}
           <Switch>
             <Route path="/shop" component={Shop} />

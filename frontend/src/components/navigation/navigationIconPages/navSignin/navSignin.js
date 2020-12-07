@@ -2,7 +2,7 @@ import React, {useState, useEffect }from "react";
 import {useDispatch, useSelector} from "react-redux";
 import { useHistory } from "react-router-dom";
 // https://www.pluralsight.com/guides/using-react-with-the-history-api
-import "./navSignup.scss";
+import "./navSignin.scss";
 import Message from '../../../Message'
 import Loader from '../../../Loader'
 import { NavLink } from "react-router-dom";
@@ -10,7 +10,7 @@ import { login } from '../../../../store/actions/userActions'
 
 import Sprite from "../../../../assets/images/sprite.svg";
 
-const NavSignup = () => {
+const NavSignin = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
@@ -81,4 +81,4 @@ const NavSignup = () => {
   );
 };
 
-export default NavSignup;
+export default NavSignin;
