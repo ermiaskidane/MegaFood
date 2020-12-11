@@ -11,20 +11,29 @@ const Purchase = () => {
 
   const [menus, setMenus]  = useState({})
 
+  useEffect(() => {
+    const fetchMenus = async () => {
+      const { data } = await axios.get("/api/purchase")
+      setMenus(data)
+    }
+    fetchMenus()
+    
+  }, [])
 
+  console.log(menus)
   return (
     
     <div className="purchase">
       {/* {menus} */}
       <div className="purchase__wrap">
-        <img src={Wrap} alt="wrap" />
+        <img src={menus.wrapImg} alt="wrap" />
         <h2>Wrap</h2>
         <p>
           <NavLink to="/shop">buy now</NavLink>
         </p>
       </div>
       <div className="purchase__pizza">
-        <img src={Pizza3} alt="Pizza3" />
+        <img src={menus.pizzaImg} alt="Pizza3" />
         <h2>Pizza</h2>
         <p>
           <NavLink to="/shop">buy now</NavLink>
@@ -32,7 +41,7 @@ const Purchase = () => {
       </div>
 
       <div className="purchase__burger">
-        <img src={Burger} alt="Hamberger" />
+        <img src={menus.burgerImg} alt="Hamberger" />
         <h2>Burger</h2>
         <p>
           <NavLink to="/shop">buy now</NavLink>
