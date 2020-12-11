@@ -53,7 +53,7 @@ const Navigation = props => {
               <use xlinkHref={`${Sprite}#icon-log-out`} />
             </svg>
             ): (
-              <svg onClick={props.singin}>
+              <svg onClick={props.signup}>
               <use xlinkHref={`${Sprite}#icon-login`} />
             </svg>
             )}

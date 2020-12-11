@@ -11,7 +11,7 @@ const menus = [
     {
         _id: "2",
         name: "Wrap",
-        image: "/images/wrap-2 (Custom).jpg",
+        image: "/images/wrap-2.jpg",
         price: 4.50,
         category: "Wrap",
         rating: 4.0,
@@ -29,7 +29,7 @@ const menus = [
     {
         _id: "4",
         name: "Burger",
-        image: "/images/burger-1 (Custom).jpg",
+        image: "/images/burger-1.jpg",
         price: 4.00,
         category: "Burger",
         rating: 4.3,
@@ -109,4 +109,10 @@ const menus = [
     },
 ]
 
-export default menus;
+const PurchaseImg = {
+    wrapImg: "/images/wrap-2.jpg",
+    pizzaImg: "/images/pizza-3.jpg",
+    burgerImg: "/images/burger-1.jpg"
+}
+
+export {menus, PurchaseImg};

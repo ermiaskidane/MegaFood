@@ -58,6 +58,7 @@
         margin: 0 auto;
       }
 
+      input[type="name"],
       input[type="email"],
       input[type="password"] {
         padding: 1rem 0;
@@ -110,6 +111,7 @@
       padding-right: 8px;
     }
     a {
+      cursor: pointer;
       text-decoration: none;
       color: $color-grey-dark-3;
     }

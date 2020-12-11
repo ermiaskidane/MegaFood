@@ -3,7 +3,7 @@ import Navigation from "../../components/navigation/navigation";
 import Footer from "../../components/footer/footer";
 
 import "./layout.scss";
-
+ 
 class Layout extends Component {
   render() {
     return (
@@ -11,7 +11,7 @@ class Layout extends Component {
         <Navigation
           open={this.props.openHandler}
           search={this.props.searchBar}
-          singin={this.props.singin}
+          signup={this.props.signup}
           shopcart={this.props.shopcart}
         />
         <main>{this.props.children}</main>

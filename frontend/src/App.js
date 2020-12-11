@@ -9,6 +9,7 @@ import Feature from "./container/feature/feature";
 import Contact from "./container/contact/contact";
 import NavSearch from "./components/navigation/navigationIconPages/navSearch/navSearch";
 import NavSignin from "./components/navigation/navigationIconPages/navSignin/navSignin";
+import NavSignup from "./components/navigation/navigationIconPages/navSignup/navSignup";
 
 import NavShopcart from "./components/navigation/navigationIconPages/navShopcart/navShopcart";
 
@@ -20,7 +21,8 @@ class App extends Component {
   state = {
     modal: false,
     searchPage: false,
-    singin: false,
+    signin: false,
+    signup: false,
     shopcart: false
   };
 
@@ -40,13 +42,50 @@ class App extends Component {
     });
   };
 
-  singInHandler = () => {
+  signInHandler = () => {
     this.setState(prevState => {
+      console.log(this.state.signin, "handler")
       return {
-        singin: !prevState.singin
+        signin: !prevState.signin,
+        signup: !prevState.signup,
       };
     });
   };
+
+  // those close function are to close the backdrop
+  signinClose = () => {
+    this.setState(prevState => {
+      return {
+        signin: !prevState.signin
+      };
+    });
+  };
+
+  signupClose = () => {
+    this.setState(prevState => {
+      return {
+        signup: !prevState.signup,
+      };
+    });
+  };
+
+  // function of navigation icon to pop up the signup form
+  signupOpen  = () => {
+    this.setState(prevState => {
+      return {
+        signup: false
+      };
+    });
+  };
+
+  signupHandler = () => {
+    this.setState(prevState => {
+      return {
+        signup: !prevState.signup,
+        signin: !prevState.signin
+      }
+    })
+  }
 
   shopcartHandler = () => {
     this.setState(prevState => {
@@ -57,16 +96,18 @@ class App extends Component {
   };
 
   render() {
+    console.log(this.state.signin, "render")
     console.log(this.state.searchPage, "Searchpage");
     let modals = null;
     let page = null;
-    let singinPage = null;
+    let signinPage = null;
+    let signupPage =null;
     let shopcartPage = null;
 
     if (this.state.modal) {
       modals = (
         <React.Fragment>
-          <Modal open={this.openHandler} singin={this.singInHandler}/>
+          <Modal open={this.openHandler} signin={this.signInHandler}/>
           <Backdrop open={this.openHandler} />
         </React.Fragment>
       );
@@ -76,11 +117,20 @@ class App extends Component {
           <NavSearch show={this.searchBarHandler} />
         </React.Fragment>
       );
-    } else if (this.state.singin) {
-      singinPage = (
+    } else if (this.state.signin) {
+      signinPage = (
         <React.Fragment>
-          <NavSignin />
-          <Backdrop open={this.singInHandler} />
+          <NavSignin signup={this.signupHandler}/>
+          <Backdrop open={this.signinClose} />
+          {/* <Backdrop open={this.signInHandler} /> */}
+        </React.Fragment>
+      );
+    }else if (!this.state.signup){
+      signupPage = (
+        <React.Fragment>
+        <NavSignup signin={this.signInHandler}/>
+        <Backdrop open={this.signupClose} />
+        {/* <Backdrop open={this.signupHandler} /> */}
         </React.Fragment>
       );
     } else if (this.state.shopcart) {
@@ -98,12 +148,13 @@ class App extends Component {
         <Layout
           openHandler={this.openHandler}
           searchBar={this.searchBarHandler}
-          singin={this.singInHandler}
+          signup={this.signupOpen}
           shopcart={this.shopcartHandler}
         >
           {modals}
           {page}
-          {singinPage}
+          {signinPage}
+          {signupPage}
           {shopcartPage}
           <Switch>
             <Route path="/shop" component={Shop} />

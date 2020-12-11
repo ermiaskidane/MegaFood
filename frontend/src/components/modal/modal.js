@@ -20,7 +20,7 @@ const modal = props => {
           <li>
             <NavLink to="/contact">Contact</NavLink>
           </li>
-          <li onClick={props.singup}>
+          <li onClick={props.signin}>
           Login
           </li>
         </ul>

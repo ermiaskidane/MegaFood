@@ -10,7 +10,7 @@ import { login } from '../../../../store/actions/userActions'
 
 import Sprite from "../../../../assets/images/sprite.svg";
 
-const NavSignin = () => {
+const NavSignin = (props) => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
@@ -37,7 +37,11 @@ const NavSignin = () => {
   }
   return (
     <>
-    <div className="navSignup">
+    {
+      userInfo ? (
+        null
+      ) : (
+        <div className="navSignup">
       <div className="navSignup__detail">
         <h1>MegaFood</h1>
         {error && <Message variant='danger'>{error}</Message>}
@@ -68,15 +72,17 @@ const NavSignin = () => {
 
         <div className="navSignup__registerNow">
           <span>Don't have an account?</span>
-          <NavLink to="#">
+          <a  onClick={props.signup}>
             Register Now
             <svg>
               <use xlinkHref={`${Sprite}#icon-arrow-right2`} />
             </svg>
-          </NavLink>
+          </a>
         </div>
       </div>
     </div>
+      )
+    }
     </>
   );
 };

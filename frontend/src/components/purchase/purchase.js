@@ -9,23 +9,8 @@ import Burger from "../../assets/images/burger-1 (Custom).jpg";
 
 const Purchase = () => {
 
-  const [menus, setMenus]  = useState([])
+  const [menus, setMenus]  = useState({})
 
-  useEffect(() => {
-    const fetchMenus = async () => {
-      const { data } = await axios.get("/api/menus")
-      console.log(data)
-      let category = []
-      for( let i = 1; i < 4; i++){
-        category.push(data[i])
-      }
-      setMenus(category)
-    }
-    fetchMenus()
-    
-  }, [])
-
-  console.log(menus)
 
   return (
     
