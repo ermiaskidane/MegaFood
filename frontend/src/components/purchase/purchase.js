@@ -4,36 +4,35 @@ import axios from "axios"
 
 import "./purchase.scss";
 import Pizza3 from "../../assets/images/pizza-3.jpg";
-import Wrap from "../../assets/images/wrap-2 (Custom).jpg";
+import Wrap from "../../assets/images/wrap-2.jpg";
 import Burger from "../../assets/images/burger-1 (Custom).jpg";
 
 const Purchase = () => {
 
-  const [menus, setMenus]  = useState({})
+  const [purchase, setPurchase]  = useState({})
 
   useEffect(() => {
-    const fetchMenus = async () => {
+    const fetchPurchase = async () => {
       const { data } = await axios.get("/api/purchase")
-      setMenus(data)
+      setPurchase(data)
     }
-    fetchMenus()
+    fetchPurchase()
     
   }, [])
 
-  console.log(menus)
+  console.log(purchase)
   return (
     
     <div className="purchase">
-      {/* {menus} */}
       <div className="purchase__wrap">
-        <img src={menus.wrapImg} alt="wrap" />
+        <img src={purchase.wrapImg} alt="wrap" />
         <h2>Wrap</h2>
         <p>
           <NavLink to="/shop">buy now</NavLink>
         </p>
       </div>
       <div className="purchase__pizza">
-        <img src={menus.pizzaImg} alt="Pizza3" />
+        <img src={purchase.pizzaImg} alt="Pizza3" />
         <h2>Pizza</h2>
         <p>
           <NavLink to="/shop">buy now</NavLink>
@@ -41,7 +40,7 @@ const Purchase = () => {
       </div>
 
       <div className="purchase__burger">
-        <img src={menus.burgerImg} alt="Hamberger" />
+        <img src={purchase.burgerImg} alt="Hamberger" />
         <h2>Burger</h2>
         <p>
           <NavLink to="/shop">buy now</NavLink>

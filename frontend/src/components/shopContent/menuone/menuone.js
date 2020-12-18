@@ -4,14 +4,14 @@ import { NavLink } from "react-router-dom";
 import Sprite from "../../../assets/images/sprite.svg";
 import "./menuone.scss";
 
-const menuOne = props => {
+const menuOne = (props) => {
   return (
     <div className="menu__content">
-      {props.content.map(m => {
+      {props.content.map((m) => {
         return (
           <div className="menu__content--one" key={m.name}>
             <div className="menu__content--wrapper">
-              <img src={m.src} alt="BurgerTwo" />
+              <img src={m.image} alt="BurgerTwo" />
 
               {/* ##### corner content ##### */}
 
@@ -48,7 +48,7 @@ const menuOne = props => {
             {/* ##### purchase Content ##### */}
             <p>{m.name}</p>
             <p>
-              <s>${m.oldprice}</s> <span>${m.price}</span>
+              <s>${m.oldPrice}</s> <span>${m.price}</span>
             </p>
           </div>
         );

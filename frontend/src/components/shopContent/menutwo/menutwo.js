@@ -3,23 +3,22 @@ import { NavLink } from "react-router-dom";
 
 import Sprite from "../../../assets/images/sprite.svg";
 import "./menutwo.scss";
-
-const menuTwo = props => {
+ 
+const menuTwo = ({content}) => {
   return (
     <div className="menu__content">
-      {props.content.map(m => {
-        return (
-          <div className="menu__content--one" key={m.name}>
+      {content.map((ms) =>(
+          <div className="menu__content--one" key={ms.name}>
             <div className="menu__content--wrapper">
-              <img src={m.src} alt="BurgerTwo" />
+              <img src={ms.image} alt="BurgerTwo" />
 
               {/* ##### corner content ##### */}
 
               <div>
                 <h5>New</h5>
 
-                {m.sale ? (
-                  <h5 style={{ background: "#ea8025" }}>{m.sale}</h5>
+                {ms.offer ? (
+                  <h5 style={{ background: "#ea8025" }}>{ms.offer}</h5>
                 ) : null}
               </div>
 
@@ -49,14 +48,13 @@ const menuTwo = props => {
               </div>
             </div>
             {/* ##### purchase Content ##### */}
-            <p>{m.name}</p>
+            <p>{ms.name}</p>
             <p>
-              {m.oldprice ? <s>${m.oldprice}</s> : null}
-              <span style={{ paddingLeft: "0.3rem" }}>${m.price}</span>
+              {ms.oldPrice ? <s>${ms.oldPrice}</s> : null}
+              <span style={{ paddingLeft: "0.3rem" }}>${ms.price}</span>
             </p>
           </div>
-        );
-      })}
+        ))}
     </div>
   );
 };

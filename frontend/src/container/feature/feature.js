@@ -7,9 +7,9 @@ import Pizzas from "../../assets/images/pizza-veg (Custom).jpg";
 import Powders from "../../assets/images/shop-b (Custom).jpg";
 
 import Burger from "../../assets/images/burger-2 (Custom).jpg";
-import ChickenFrie from "../../assets/images/fried-chicken (Custom).jpg";
-import Pepperoni from "../../assets/images/pizza-pepperoni (Custom).jpg";
-import Taco from "../../assets/images/taco-1 (Custom).jpg";
+import ChickenFrie from "../../assets/images/fried-chicken.jpg";
+import Pepperoni from "../../assets/images/pizza-pepperoni-Custom.jpg";
+import Taco from "../../assets/images/taco-1.jpg";
 import PanPizza from "../../assets/images/pizza-4 (Custom).jpg";
 import MeatFries from "../../assets/images/fries-meat (Custom).jpg";
 

@@ -1,68 +1,38 @@
-import React, { Component } from "react";
+import React, {useState, useEffect } from "react";
+import axios from "axios"
+
 import MenuOne from "../../components/shopContent/menuone/menuone";
 import MenuTwo from "../../components/shopContent/menutwo/menutwo";
 import SideLeft from "../../components/shopContent/sideleft/sideleft";
 
-import Burger2 from "../../assets/images/shop-burger-2.jpg";
-import Burrito3 from "../../assets/images/wrap-2 (Custom).jpg";
-import Pizza1 from "../../assets/images/pizza-pepperoni (Custom).jpg";
-
-import Fries from "../../assets/images/chillie-fries.jpg";
-import Taco1 from "../../assets/images/taco-1 (Custom).jpg";
-import PizzaMeat from "../../assets/images/pizza-meat-1.jpg";
-import PizzaPepperoni from "../../assets/images/pizza-pepperoni (Custom).jpg";
-import BurgerShop1 from "../../assets/images/shop-burger-1.jpg";
-import FriedChicken from "../../assets/images/fried-chicken (Custom).jpg";
-import Taco2 from "../../assets/images/taco-2 (Custom).jpg";
-
 import Sprite from "../../assets/images/sprite.svg";
 import "./shop.scss";
 
-class Shop extends Component {
-  state = {
-    menu: [
-      { src: Burger2, name: "Meal Burger", oldprice: "6.90", price: "5.90" },
-      { src: Burrito3, name: "Burrito", oldprice: "6.00", price: "4.90" },
-      { src: Pizza1, name: "Mixed Pizza", oldprice: "6.00", price: "4.90" }
-    ],
-    menuTwo: [
-      {
-        src: Fries,
-        name: "Chillie fries",
-        sale: "sale",
-        oldprice: "3.00",
-        price: "2.50"
-      },
-      {
-        src: Taco1,
-        name: "Deli Taco Crunchy",
-        sale: "sale",
-        oldprice: "6.00",
-        price: "4.90"
-      },
-      {
-        src: Burger2,
-        name: "Meal Burger",
-        sale: "sale",
-        oldprice: "6.90",
-        price: "5.90"
-      },
-      { src: PizzaMeat, name: "Beef Pizza", price: "6.90" },
-      { src: PizzaPepperoni, name: "Pepparoni Pizza", price: "4.90" },
-      { src: BurgerShop1, name: "Cheese Burger", price: "3.90" },
-      { src: FriedChicken, name: "Fried Chicken", price: "3.50" },
-      { src: Taco2, name: "Avoca Deli Taco", price: "5.00" }
-    ],
-    showMenu: true
-  };
-  render() {
-    let menuOne = null;
-    let menuTwo = null;
+const Shop = () => {
+    const [seller, setSeller] = useState([])
+    const [food, setFood] = useState([])
 
-    if (this.state.showMenu) {
-      menuOne = <MenuOne content={this.state.menu} />;
-      menuTwo = <MenuTwo content={this.state.menuTwo} />;
+    useEffect(() => {
+      const fetchSeller = async () => {
+      
+        const { data } = await axios.get("/api/shop/bestsellers")
+
+        console.log(data)
+        setSeller(data)
+      }
+      fetchSeller()
+    }, [])
+
+  useEffect(() => {
+    const fetchFood = async () => {
+      const { data } = await axios.get("/api/shops/sellers")
+
+      console.log(data)
+      setFood(data)
     }
+    fetchFood()
+  }, [])
+
     return (
       <div className="shop">
         <div className="shop__image">
@@ -92,7 +62,7 @@ class Shop extends Component {
                 Show all <span>&#x3e;</span>
               </p>
             </div>
-            {menuOne}
+            <MenuOne content={seller} /> 
           </div>
 
           <div className="shop__main--all">
@@ -112,12 +82,11 @@ class Shop extends Component {
                 </select>
               </div>
             </div>
-            {menuTwo}
+            <MenuTwo content={food} />
           </div>
         </div>
       </div>
     );
-  }
 }
 
 export default Shop;
