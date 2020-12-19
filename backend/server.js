@@ -3,7 +3,7 @@ import dotenv from "dotenv"
 import colors from "colors"
  
 // const menus = require("./data/menus") 
-import {menus, PurchaseImg, bestSellerImg, AllSellers} from "./data/menus.js"
+import {menus, PurchaseImg, bestSellerImg, AllSellers,featurePost,featureInstagram, featureArticles} from "./data/menus.js"
 // const connectDB = require("./config/db")
 // const userRouters = require("./routes/userRoutes")
 import connectDB from "./config/db.js"
@@ -41,6 +41,18 @@ app.get("/api/shops/sellers", (req, res) => {
 
 app.get("/api/shop/bestsellers", (req, res) => {
   res.json(bestSellerImg)
+}),
+
+app.get("/api/feature/post", (req, res) => {
+  res.json(featurePost)
+})
+
+app.get("/api/feature/instag", (req, res) => {
+  res.json(featureInstagram)
+})
+
+app.get("/api/feature/articles", (req, res) => {
+  res.json(featureArticles)
 })
 
 app.use("/api/users", userRoutes)

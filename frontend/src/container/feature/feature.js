@@ -1,23 +1,46 @@
-import React, { Component } from "react";
+import React, { useState, useEffect} from "react";
 import { NavLink } from "react-router-dom";
-
-import ShopC from "../../assets/images/shop-c (Medium).jpg";
-import Burrito from "../../assets/images/shop-burrito-1.jpg";
-import Pizzas from "../../assets/images/pizza-veg (Custom).jpg";
-import Powders from "../../assets/images/shop-b (Custom).jpg";
-
-import Burger from "../../assets/images/burger-2 (Custom).jpg";
-import ChickenFrie from "../../assets/images/fried-chicken.jpg";
-import Pepperoni from "../../assets/images/pizza-pepperoni-Custom.jpg";
-import Taco from "../../assets/images/taco-1.jpg";
-import PanPizza from "../../assets/images/pizza-4 (Custom).jpg";
-import MeatFries from "../../assets/images/fries-meat (Custom).jpg";
+import axios from "axios"
 
 import Sprite from "../../assets/images/sprite.svg";
 import "./feature.scss";
 
-class Feature extends Component {
-  render() {
+const Feature = () => {
+
+    const [featurePost, setFeaturePost] = useState([])
+    const [featureInstag, setFeatureInstag] = useState([])
+    const [featureArticle, setFeatureArticle] = useState([])
+
+    // Data about the post
+    useEffect(() => {
+      const featureData = async () => {
+        const { data } = await axios.get("/api/feature/post")
+
+        setFeaturePost(data)
+      }
+      featureData()
+    }, [])
+
+    // Data about the Instagram images
+    useEffect(() => {
+      const featureData = async () => {
+        const { data } = await axios.get("/api/feature/instag")
+
+        setFeatureInstag(data)
+      }
+      featureData()
+    }, [])
+
+    // Data about the posted articles
+    useEffect(() => {
+      const featureData = async () => {
+        const { data } = await axios.get("/api/feature/articles")
+
+        setFeatureArticle(data)
+      }
+      featureData()
+    }, [])
+
     return (
       <div className="feature">
         {/* ###### ReusedCode from Shop.js ###### */}
@@ -84,87 +107,35 @@ class Feature extends Component {
 
           <div className="feature__sideleft--posts">
             <h2>Recent posts</h2>
-            <div className="feature__sideleft--post">
+            {featurePost.map((post) => (
+              <div className="feature__sideleft--post">
               <div className="feature__post--content">
                 <figure>
                   <NavLink to="/feature">
-                    <img src={ShopC} alt="pic" />
+                    <img src={post.image} alt="pic" id="powder" />
                   </NavLink>
                 </figure>
                 <div className="feature__post--detail">
-                  <p>31.November.2019</p>
-                  <h4>
-                    <NavLink to="/feature"> Most Popular dishes in Uk</NavLink>
-                  </h4>
-                  <p>2 comments</p>
-                </div>
-              </div>
-              <hr />
-            </div>
-            <div className="feature__sideleft--post">
-              <div className="feature__post--content">
-                <figure>
-                  <NavLink to="/feature">
-                    <img src={Burrito} alt="pic" />
-                  </NavLink>
-                </figure>
-                <div className="feature__post--detail">
-                  <p>31.November.2019</p>
-                  <h4>
-                    <NavLink to="/feature">How to make Burrito</NavLink>
-                  </h4>
-                  <p>0 comments</p>
-                </div>
-              </div>
-              <hr />
-            </div>
-            <div className="feature__sideleft--post">
-              <div className="feature__post--content">
-                <figure>
-                  <NavLink to="/feature">
-                    <img src={Pizzas} alt="pic" />
-                  </NavLink>
-                </figure>
-                <div className="feature__post--detail">
-                  <p>31.November.2019</p>
-                  <h4>
-                    <NavLink to="/feature">How we make our pizza</NavLink>
-                  </h4>
-                  <p>0 comments</p>
-                </div>
-              </div>
-              <hr />
-            </div>
-            <div className="feature__sideleft--post">
-              <div className="feature__post--content">
-                <figure>
-                  <NavLink to="/feature">
-                    <img src={Powders} alt="pic" id="powder" />
-                  </NavLink>
-                </figure>
-                <div className="feature__post--detail">
-                  <p>31.November.2019</p>
+                  <p>{post.postDate}</p>
                   <h4>
                     <NavLink to="/feature">
-                      You know how to make yummy food
+                      {post.title}
                     </NavLink>
                   </h4>
-                  <p>1 comments</p>
+                  <p>{post.comments}</p>
                 </div>
               </div>
               <hr />
             </div>
+            ))}
           </div>
 
           <div className="feature__sideleft--instagram">
             <h2>Instagram</h2>
             <figure className="feature__instagram--images">
-              <img src={Burger} alt="pic1" />
-              <img src={ChickenFrie} alt="pic2" />
-              <img src={Pepperoni} alt="pic3" />
-              <img src={Taco} alt="pic4" />
-              <img src={PanPizza} alt="pic5" />
-              <img src={MeatFries} alt="pic6" />
+              {featureInstag.map((inst) => (
+                  <img src={inst.image} alt="pics" />
+              ))}
             </figure>
           </div>
 
@@ -206,174 +177,43 @@ class Feature extends Component {
           </div>
         </div>
         <div className="feature__main">
-          <div className="feature__main--content">
-            <figure className="feature__main--image">
-              <NavLink to="/more">
-                <img src={ShopC} alt="fig pic" />
-              </NavLink>
-            </figure>
-            <div className="feature__main--para">
-              <div className="feature__main--heading">
-                <div className="feature__main--circle">
-                  <p>31</p>
-                  <hr />
-                  <p>Nov</p>
-                </div>
-                <div className="feature__main--title">
-                  <h4>News</h4>
-                  <h2>Most Popular Dishes In Uk </h2>
-                </div>
-              </div>
-              <article>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
-                  unde vel fugiat fuga delectus enim aspernatur, corporis ex
-                  dolores minima modi quae quidem, aperiam suscipit quisquam?
-                  Reiciendis, dolorem molestiae in eos eligendi at repellendus
-                  odit vitae necessitatibus recusandae dolore suscipit vel sint
-                  quae? Itaque aliquam ipsam qui quia. Voluptatibus sunt
-                  accusantium eum rem tempore repudiandae unde nesciunt quas
-                  laborum quaerat. aliquam ipsam qui quia. Voluptatibus sunt ...
-                </p>
-              </article>
-              <div className="feature__main--footer">
-                <h4>
-                  BY :: Andrew Colt <span>/ 2 comments</span>
-                </h4>
-                <NavLink to="/feature">
-                  <p>
-                    Read More <span>&gt;</span>
-                  </p>
+          {featureArticle.map((article) => (
+              <div className="feature__main--content">
+              <figure className="feature__main--image">
+                <NavLink to="/more">
+                  <img src={article.image} alt="fig pic" />
                 </NavLink>
+              </figure>
+              <div className="feature__main--para">
+                <div className="feature__main--heading">
+                  <div className="feature__main--circle">
+                    <p>{article.date}</p>
+                    <hr />
+                    <p>{article.month}</p>
+                  </div>
+                  <div className="feature__main--title">
+                    <h4>{article.type}</h4>
+                    <h2>{article.title} </h2>
+                  </div>
+                </div>
+                <article>
+                  <p>
+                   {article.description}
+                  </p>
+                </article>
+                <div className="feature__main--footer">
+                  <h4>
+                   {article.author} <span>/{article.comments}</span>
+                  </h4>
+                  <NavLink to="/feature">
+                    <p>
+                      Read More <span>&gt;</span>
+                    </p>
+                  </NavLink>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="feature__main--content">
-            <figure className="feature__main--image">
-              <NavLink to="/more">
-                <img src={Burrito} alt="fig pic" />
-              </NavLink>
-            </figure>
-            <div className="feature__main--para">
-              <div className="feature__main--heading">
-                <div className="feature__main--circle">
-                  <p>31</p>
-                  <hr />
-                  <p>Nov</p>
-                </div>
-                <div className="feature__main--title">
-                  <h4>News</h4>
-                  <h2>How to make Burrito </h2>
-                </div>
-              </div>
-              <article>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Distinctio deserunt asperiores quisquam quasi, saepe, iusto
-                  dicta ducimus, est illum itaque ipsum doloremque
-                  necessitatibus pariatur doloribus tempora. Quam repellat
-                  provident maiores aperiam animi quasi fuga! Accusamus,
-                  quibusdam quisquam maiores animi, veritatis tempore explicabo
-                  quia quaerat eveniet totam laborum quo ipsa sed excepturi!
-                  Accusamus minus ea natus...
-                </p>
-              </article>
-              <div className="feature__main--footer">
-                <h4>
-                  BY :: Andrew Colt <span>/ 0 comments</span>
-                </h4>
-                <NavLink to="/feature">
-                  <p>
-                    Read More <span>&gt;</span>
-                  </p>
-                </NavLink>
-              </div>
-            </div>
-          </div>
-          <div className="feature__main--content">
-            <figure className="feature__main--image">
-              <NavLink to="/more">
-                <img src={Pizzas} alt="fig pic" />
-              </NavLink>
-            </figure>
-            <div className="feature__main--para">
-              <div className="feature__main--heading">
-                <div className="feature__main--circle">
-                  <p>31</p>
-                  <hr />
-                  <p>Nov</p>
-                </div>
-                <div className="feature__main--title">
-                  <h4>News</h4>
-                  <h2>How we make our pizza</h2>
-                </div>
-              </div>
-              <article>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea
-                  tempore eos dolore blanditiis. Repudiandae maiores fugiat
-                  similique, impedit inventore ut voluptatum blanditiis mollitia
-                  porro cumque. Tenetur dolorem ipsam ut laudantium ipsum
-                  quaerat fugiat! Corrupti rem iusto sunt nulla, facere repellat
-                  ex ea saepe, esse maiores beatae voluptate? Fugiat sed eveniet
-                  culpa consectetur rerum, dignissimos magnam voluptas debitis
-                  natus, modi sequi deleniti distinctio cupiditate ex...
-                </p>
-              </article>
-              <div className="feature__main--footer">
-                <h4>
-                  BY :: Andrew Colt <span>/ 0 comments</span>
-                </h4>
-                <NavLink to="/feature">
-                  <p>
-                    Read More <span>&gt;</span>
-                  </p>
-                </NavLink>
-              </div>
-            </div>
-          </div>
-          <div className="feature__main--content">
-            <figure className="feature__main--image">
-              <NavLink to="/more">
-                <img src={Powders} alt="fig pic" />
-              </NavLink>
-            </figure>
-            <div className="feature__main--para">
-              <div className="feature__main--heading">
-                <div className="feature__main--circle">
-                  <p>31</p>
-                  <hr />
-                  <p>Nov</p>
-                </div>
-                <div className="feature__main--title">
-                  <h4>News</h4>
-                  <h2>You know how to make yummy Food </h2>
-                </div>
-              </div>
-              <article>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
-                  unde vel fugiat fuga delectus enim aspernatur, corporis ex
-                  dolores minima modi quae quidem, aperiam suscipit quisquam?
-                  Reiciendis, dolorem molestiae in eos eligendi at repellendus
-                  odit vitae necessitatibus recusandae dolore suscipit vel sint
-                  quae? Itaque aliquam ipsam qui quia. Voluptatibus sunt
-                  accusantium eum rem tempore repudiandae unde nesciunt quas
-                  laborum quaerat. aliquam ipsam qui quia. Voluptatibus sunt ...
-                </p>
-              </article>
-              <div className="feature__main--footer">
-                <h4>
-                  BY :: Andrew Colt <span>/ 1 comments</span>
-                </h4>
-                <NavLink to="/feature">
-                  <p>
-                    Read More <span>&gt;</span>
-                  </p>
-                </NavLink>
-              </div>
-            </div>
-          </div>
+          ))}
           <div className="feature__main--buttons">
             <span>
               <NavLink to="/feature">1</NavLink>
@@ -391,7 +231,6 @@ class Feature extends Component {
         </div>
       </div>
     );
-  }
 }
 
 export default Feature;
