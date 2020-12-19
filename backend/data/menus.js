@@ -218,6 +218,36 @@ const bestSellerImg = [
     }
 ]
 
+const featurePost =  [
+    {
+        _id: "1",
+        image: "images/shop-c-Medium.jpg",
+        postDate: "31.November.2019",
+        title: "Most Popular Dishes In UK",
+        comments: "2 comments"
+    },
+    {
+        _id: "2",
+        image: "images/shop-burrito-1.jpg",
+        postDate: "31.November.2019",
+        title: "How To Make Burrito",
+        comments: "0 comment"
+    },
+    {
+        _id: "3",
+        image: "images/pizza-veg-Custom.jpg",
+        postDate: "31.November.2019",
+        title: "How To Make Our Pizza",
+        comments: "0 comment"
+    },
+    {
+        _id: "4",
+        image: "images/shop-b-Custom.jpg",
+        postDate: "31.November.2019",
+        title: "You Know How To Make Yummy Food",
+        comments: "1 comment"
+    },
+]
 
 
-export {menus, PurchaseImg, bestSellerImg, AllSellers};
+export {menus, PurchaseImg, bestSellerImg, AllSellers, featurePost};
