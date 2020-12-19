@@ -43,6 +43,10 @@ app.get("/api/shop/bestsellers", (req, res) => {
   res.json(bestSellerImg)
 })
 
+app.get("/api/feature/post", (req, res) => {
+  res.json(featurePost)
+})
+
 app.use("/api/users", userRoutes)
 
 // // Custom Error Handler for Routes does not exist
