@@ -25,7 +25,7 @@ const Shop = () => {
 
   useEffect(() => {
     const fetchFood = async () => {
-      const { data } = await axios.get("/api/shops/sellers")
+      const { data } = await axios.get("/api/shop/sellers")
 
       console.log(data)
       setFood(data)

@@ -3,11 +3,14 @@ import dotenv from "dotenv"
 import colors from "colors"
  
 // const menus = require("./data/menus") 
-import {menus, PurchaseImg, bestSellerImg, AllSellers,featurePost,featureInstagram, featureArticles} from "./data/menus.js"
+import {menus} from "./data/menus.js"
 // const connectDB = require("./config/db")
 // const userRouters = require("./routes/userRoutes")
 import connectDB from "./config/db.js"
 import userRoutes from "./routes/userRoutes.js"
+import menuRoutes from "./routes/menuRoutes.js"
+import shopRoutes from "./routes/shopRoutes.js"
+import featureRoutes from "./routes/featureRoutes.js"
 
 dotenv.config()
 
@@ -21,13 +24,7 @@ app.get("/", (req, res) => {
   res.send("Welcome to backend...")
 })
  
-app.get("/api/purchase", (req, res) => {
-  res.json(PurchaseImg)
-})
-
-app.get("/api/menus", (req, res) => {
-  res.json(menus)
-})
+app.use("/api/homeScreen", menuRoutes)
 
 app.get("/api/menus/:id", (req, res) => {
   const menu = menus.find((m) => m._id ===req.params.id)
@@ -35,25 +32,9 @@ app.get("/api/menus/:id", (req, res) => {
   res.json(menu)
 })
 
-app.get("/api/shops/sellers", (req, res) => {
-  res.json(AllSellers)
-})
+app.use("/api/shop", shopRoutes)
 
-app.get("/api/shop/bestsellers", (req, res) => {
-  res.json(bestSellerImg)
-}),
-
-app.get("/api/feature/post", (req, res) => {
-  res.json(featurePost)
-})
-
-app.get("/api/feature/instag", (req, res) => {
-  res.json(featureInstagram)
-})
-
-app.get("/api/feature/articles", (req, res) => {
-  res.json(featureArticles)
-})
+app.use("/api/feature", featureRoutes)
 
 app.use("/api/users", userRoutes)
 

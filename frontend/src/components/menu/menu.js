@@ -5,7 +5,6 @@ import axios from "axios"
 import "./menu.scss";
 
 import Sprite from "../../assets/images/sprite.svg";
-// import axios from "axios";
 
 const Menu = () => {
 
@@ -13,7 +12,7 @@ const Menu = () => {
 
   useEffect(() => {
     const fetchMenus = async () => {
-      const { data } = await axios.get("/api/menus")
+      const { data } = await axios.get("/api/homeScreen/menus")
 
       setMenus(data)
     }

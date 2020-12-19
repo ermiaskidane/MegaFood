@@ -3,9 +3,6 @@ import { NavLink } from "react-router-dom";
 import axios from "axios"
 
 import "./purchase.scss";
-import Pizza3 from "../../assets/images/pizza-3.jpg";
-import Wrap from "../../assets/images/wrap-2.jpg";
-import Burger from "../../assets/images/burger-1 (Custom).jpg";
 
 const Purchase = () => {
 
@@ -13,7 +10,7 @@ const Purchase = () => {
 
   useEffect(() => {
     const fetchPurchase = async () => {
-      const { data } = await axios.get("/api/purchase")
+      const { data } = await axios.get("/api/homeScreen/purchase")
       setPurchase(data)
     }
     fetchPurchase()

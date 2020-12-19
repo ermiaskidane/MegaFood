@@ -108,7 +108,7 @@ const Feature = () => {
           <div className="feature__sideleft--posts">
             <h2>Recent posts</h2>
             {featurePost.map((post) => (
-              <div className="feature__sideleft--post">
+              <div className="feature__sideleft--post" key={post._id}>
               <div className="feature__post--content">
                 <figure>
                   <NavLink to="/feature">
@@ -134,7 +134,7 @@ const Feature = () => {
             <h2>Instagram</h2>
             <figure className="feature__instagram--images">
               {featureInstag.map((inst) => (
-                  <img src={inst.image} alt="pics" />
+                  <img src={inst.image} alt="pics" key={inst._id} />
               ))}
             </figure>
           </div>
@@ -178,7 +178,7 @@ const Feature = () => {
         </div>
         <div className="feature__main">
           {featureArticle.map((article) => (
-              <div className="feature__main--content">
+              <div className="feature__main--content" key={article._id}>
               <figure className="feature__main--image">
                 <NavLink to="/more">
                   <img src={article.image} alt="fig pic" />

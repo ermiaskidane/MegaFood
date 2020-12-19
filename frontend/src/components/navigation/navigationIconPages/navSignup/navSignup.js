@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 import "../navSignin/navSignin.scss";
 import Message from '../../../Message'
 import Loader from '../../../Loader'
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 import { register } from '../../../../store/actions/userActions'
 
 import Sprite from "../../../../assets/images/sprite.svg";
