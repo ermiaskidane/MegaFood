@@ -324,4 +324,4 @@ const featureArticles = [
 ]
 
 
-export {menus, PurchaseImg, bestSellerImg, AllSellers, featurePost, featureInstagram};
+export {menus, PurchaseImg, bestSellerImg, AllSellers, featurePost, featureInstagram, featureArticles};
