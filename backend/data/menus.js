@@ -249,5 +249,32 @@ const featurePost =  [
     },
 ]
 
+const featureInstagram = [
+    {
+        _id: "1",
+        image: "images/burger-2.jpg"
+    },
+    {
+        _id: "2",
+        image: "images/fried-chicken.jpg"
+    },
+    {
+        _id: "3",
+        image: "images/pizza-pepperoni-Custom.jpg"
+    },
+    {
+        _id: "4",
+        image: "images/taco-1.jpg"
+    },
+    {
+        _id: "5",
+        image: "images/pizza-4.jpg"
+    },
+    {
+        _id: "6",
+        image: "images/fries-meat.jpg"
+    },
+]
 
-export {menus, PurchaseImg, bestSellerImg, AllSellers, featurePost};
+
+export {menus, PurchaseImg, bestSellerImg, AllSellers, featurePost, featureInstagram};
