@@ -3,7 +3,7 @@ import dotenv from "dotenv"
 import colors from "colors"
  
 // const menus = require("./data/menus") 
-import {menus, PurchaseImg, bestSellerImg, AllSellers} from "./data/menus.js"
+import {menus, PurchaseImg, bestSellerImg, AllSellers,featurePost,featureInstagram, featureArticles} from "./data/menus.js"
 // const connectDB = require("./config/db")
 // const userRouters = require("./routes/userRoutes")
 import connectDB from "./config/db.js"
