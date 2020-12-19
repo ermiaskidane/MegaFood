@@ -276,5 +276,52 @@ const featureInstagram = [
     },
 ]
 
+const featureArticles = [ 
+    {
+        _id: "1",
+        image: "images/shop-c-Medium.jpg",
+        date: 31,
+        month: "Nov",
+        type: "News",
+        title: "Most Popular Dishes In Uk",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit Vitae unde vel fugiat fuga delectus enim aspernatur, corporis exdolores minima modi quae quidem, aperiam suscipit quisquam?Reiciendis, dolorem molestiae in eos eligendi at repellendus odit vitae necessitatibus recusandae dolore suscipit vel sint quae? Itaque aliquam ipsam qui quia. Voluptatibus sunt accusantium eum rem tempore repudiandae unde nesciunt quas laborum quaerat. aliquam ipsam qui quia. Voluptatibus sunt ...",
+        author: "BY :: Andrew Colt",
+        comments: "2 comments",
+    },
+    {
+        _id: "2",
+        image: "images/shop-burrito-1.jpg",
+        date: 31,
+        month: "Nov",
+        type: "News",
+        title: "How to make Burrito ",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.Distinctio deserunt asperiores quisquam quasi, saepe, iusto dicta ducimus, est illum itaque ipsum doloremque necessitatibus pariatur doloribus tempora. Quam repellat provident maiores aperiam animi quasi fuga! Accusamus, quibusdam quisquam maiores animi, veritatis tempore explicabo quia quaerat eveniet totam laborum quo ipsa sed excepturi! Accusamus minus ea natus...",
+        author: "BY :: Andrew Colt",
+        comments: "0 comment",
+    },
+    {
+        _id: "3",
+        image: "images/pizza-veg-Custom.jpg",
+        date: 31,
+        month: "Nov",
+        type: "News",
+        title: "How we make our pizza",
+        description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea tempore eos dolore blanditiis. Repudiandae maiores fugiat similique, impedit inventore ut voluptatum blanditiis mollitia porro cumque. Tenetur dolorem ipsam ut laudantium ipsum  quaerat fugiat! Corrupti rem iusto sunt nulla, facere repellat ex ea saepe, esse maiores beatae voluptate? Fugiat sed eveniet culpa consectetur rerum, dignissimos magnam voluptas debitis natus, modi sequi deleniti distinctio cupiditate ex...",
+        author: "BY :: Andrew Colt",
+        comments: "0 comment",
+    },
+    {
+        _id: "4",
+        image: "images/shop-b-Custom.jpg",
+        date: 31,
+        month: "Nov",
+        type: "News",
+        title: "You know how to make yummy Food",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae unde vel fugiat fuga delectus enim aspernatur, corporis ex dolores minima modi quae quidem, aperiam suscipit quisquam? Reiciendis, dolorem molestiae in eos eligendi at repellendus  odit vitae necessitatibus recusandae dolore suscipit vel sint quae? Itaque aliquam ipsam qui quia. Voluptatibus sunt accusantium eum rem tempore repudiandae unde nesciunt quas laborum quaerat. aliquam ipsam qui quia. Voluptatibus sunt ...",
+        author: "BY :: Andrew Colt",
+        comments: "1 comment",
+    }
+]
+
 
 export {menus, PurchaseImg, bestSellerImg, AllSellers, featurePost, featureInstagram};
