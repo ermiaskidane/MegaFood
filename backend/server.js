@@ -47,6 +47,10 @@ app.get("/api/feature/post", (req, res) => {
   res.json(featurePost)
 })
 
+app.get("/api/feature/instag", (req, res) => {
+  res.json(featureInstagram)
+})
+
 app.use("/api/users", userRoutes)
 
 // // Custom Error Handler for Routes does not exist
