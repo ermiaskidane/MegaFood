@@ -41,7 +41,7 @@ app.get("/api/shops/sellers", (req, res) => {
 
 app.get("/api/shop/bestsellers", (req, res) => {
   res.json(bestSellerImg)
-})
+}),
 
 app.get("/api/feature/post", (req, res) => {
   res.json(featurePost)
