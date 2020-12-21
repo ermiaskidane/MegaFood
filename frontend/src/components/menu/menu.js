@@ -20,6 +20,11 @@ const Menu = () => {
     fetchMenus()
   }, [])
 
+  const addToCartHandler = (id) => {
+    console.log(id)
+    dispatch(detailMenus(id))
+  }
+  
   return (
     <div className="menu">
       <h2>Menu</h2>
