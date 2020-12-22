@@ -16,11 +16,5 @@ router.get("/menus/:id", (req, res) => {
   
     res.json(menu)
 })
-
-// app.get("/api/menus/:id", (req, res) => {
-//     const menu = menus.find((m) => m._id ===req.params.id)
-  
-//     res.json(menu)
-//   })
   
 export default router
