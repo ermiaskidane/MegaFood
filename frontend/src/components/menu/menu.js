@@ -1,5 +1,6 @@
 import React, { useState, useEffect} from "react";
 import { NavLink } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux"
 import axios from "axios"
 
 import "./menu.scss";
@@ -10,6 +11,8 @@ import Sprite from "../../assets/images/sprite.svg";
 const Menu = () => {
 
   const [menus, setMenus] = useState([])
+  
+  const dispatch = useDispatch()
 
   useEffect(() => {
     const fetchMenus = async () => {
