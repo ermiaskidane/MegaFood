@@ -1,22 +1,21 @@
 import React, { useState, useEffect} from "react";
-import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux"
+import { NavLink } from "react-router-dom";
 import axios from "axios"
 
 import "./menu.scss";
-
 import Sprite from "../../assets/images/sprite.svg";
-// import axios from "axios";
+import { detailMenus} from "../../store/actions/menusActions"
 
 const Menu = () => {
 
   const [menus, setMenus] = useState([])
-  
-  const dispatch = useDispatch()
 
+  const dispatch = useDispatch()
+  
   useEffect(() => {
     const fetchMenus = async () => {
-      const { data } = await axios.get("/api/menus")
+      const { data } = await axios.get("/api/homeScreen/menus")
 
       setMenus(data)
     }
@@ -27,7 +26,6 @@ const Menu = () => {
     console.log(id)
     dispatch(detailMenus(id))
   }
-  
   return (
     <div className="menu">
       <h2>Menu</h2>
