@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import {BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import MegaFood from "./container/megafood/megafood";
 
@@ -167,6 +168,12 @@ class App extends Component {
       </div>
       </Router>
     );
+  }
+}
+
+const mapStateToProps = state => {
+  return {
+    menuDetail: state.menusDetail.menusItem
   }
 }
 
