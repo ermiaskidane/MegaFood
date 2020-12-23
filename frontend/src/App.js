@@ -134,7 +134,7 @@ class App extends Component {
         {/* <Backdrop open={this.signupHandler} /> */}
         </React.Fragment>
       );
-    } else if (this.state.shopcart) {
+    } else if (this.state.shopcart || this.props.menuDetail.length !== 0) {
       shopcartPage = (
         <React.Fragment>
           <NavShopcart show={this.shopcartHandler} />
