@@ -6,6 +6,10 @@ import {
     userRegisterReducer,
 } from "./store/reducers/userReducers"
 
+import { 
+    menusDetailReducer
+} from "./store/reducers/menusReducers"
+
 const reducer = combineReducers({
     userLogin: userLoginReducer,
     userRegister: userRegisterReducer,
