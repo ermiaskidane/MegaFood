@@ -13,6 +13,7 @@ import {
 const reducer = combineReducers({
     userLogin: userLoginReducer,
     userRegister: userRegisterReducer,
+    menusDetail: menusDetailReducer
 })
 
 const userInfoFromStorage = localStorage.getItem("userInfo") ? 
