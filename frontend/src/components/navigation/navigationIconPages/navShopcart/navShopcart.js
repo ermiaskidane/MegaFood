@@ -5,7 +5,12 @@ import "./navShopcart.scss";
 
 import Sprite from "../../../../assets/images/sprite.svg";
 
-const navShopcart = props => {
+const NavShopcart = props => {
+  const dispatch = useDispatch()
+
+  const menuItem = useSelector((state) => state.menusDetail)
+  const { menusItem, shopCartReducer }  = menuItem
+  
   return (
     <div className="navShopcart">
       <div className="navShopcart__detail">
@@ -30,4 +35,4 @@ const navShopcart = props => {
   );
 };
 
-export default navShopcart;
+export default NavShopcart;
