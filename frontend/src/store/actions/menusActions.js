@@ -20,8 +20,7 @@ import {
                 image: data.image,
                 price: data.price,
                 oldPrice: data.oldPrice,
-                offer: data.offer,
-                shopcart: true
+                offer: data.offer
             }
         }) 
   }
