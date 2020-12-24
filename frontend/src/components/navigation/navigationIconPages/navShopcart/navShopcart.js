@@ -1,16 +1,17 @@
+// import React from "react";
 import React, {useState, useEffect } from "react";
 import {useDispatch, useSelector} from "react-redux";
 import { NavLink } from "react-router-dom";
 import "./navShopcart.scss";
 
 import Sprite from "../../../../assets/images/sprite.svg";
-
+ 
 const NavShopcart = props => {
   const dispatch = useDispatch()
 
   const menuItem = useSelector((state) => state.menusDetail)
   const { menusItem, shopCartReducer }  = menuItem
-  
+
   return (
     <div className="navShopcart">
       <div className="navShopcart__detail">
@@ -23,8 +24,7 @@ const NavShopcart = props => {
             <use xlinkHref={`${Sprite}#icon-circle`} />
           </svg>
         </div>
-
-      {menusItem.length !== 0 ? 
+    {menusItem.length !== 0 ? 
     (menusItem.map((item) => 
     (<div className="navShopcart__detail--menu">
       <ul key={item.menu}>
@@ -52,6 +52,7 @@ const NavShopcart = props => {
             <NavLink to="/shop">Go to The Shop</NavLink>
           </button>
         </div>)}
+        
       </div>
     </div>
   );
