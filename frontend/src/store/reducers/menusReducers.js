@@ -16,12 +16,14 @@ export const menusDetailReducer = (state = {menusItem: []}, action) => {
             if(existItems) {
                 return {
                     ...state,
-                    menusItem: state.menusItem.map((x) => x.menu === existItems.menu ? item : x)
+                    menusItem: state.menusItem.map((x) => x.menu === existItems.menu ? item : x),
+                    shopCartReducer: false
                 }
             } else {
                 return {
                     ...state,
-                    menusItem: [...state.menusItem, item]
+                    menusItem: [...state.menusItem, item],
+                    shopCartReducer: false
                 }
             }
             case MENU_REMOVE_ITEM:
