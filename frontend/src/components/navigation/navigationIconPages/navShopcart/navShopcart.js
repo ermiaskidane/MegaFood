@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import { NavLink } from "react-router-dom";
 import "./navShopcart.scss";
 
+import { detailMenus, removeFromMenus} from "../../../../store/actions/menusActions"
 import Sprite from "../../../../assets/images/sprite.svg";
  
 const NavShopcart = props => {
@@ -12,6 +13,11 @@ const NavShopcart = props => {
   const menuItem = useSelector((state) => state.menusDetail)
   const { menusItem, shopCartReducer }  = menuItem
 
+  const removeFromDetailMenusHandler = (id) => {
+    console.log(id)
+    // dispatch(removeFromMenus(id))
+  }
+ 
   return (
     <div className="navShopcart">
       <div className="navShopcart__detail">
@@ -41,8 +47,25 @@ const NavShopcart = props => {
         </figure>
         <p className="Name"><NavLink to="/">{item.name}</NavLink></p>
         <p className="price">{item.price}</p>
-        <p className="offer">{item.offer}</p>
-        </li>
+        <select 
+          id="navShopcart__detail--id"
+          name="find-us" 
+          value={item.qty} 
+          onChange={(e) => dispatch(
+            detailMenus(item.menu, Number(e.target.value))
+          )}>
+          {[...Array(6).keys()].map((x) => (
+            <option key={x + 1} value={x + 1}>{x + 1}</option>
+          ))}
+        </select>
+        <button 
+        type="button" 
+        onClick={() => removeFromDetailMenusHandler(item.menu)}>
+          <svg>
+            <use xlinkHref={`${Sprite}#icon-cross`} />
+          </svg>
+        </button>
+      </li>
     </ul>
     </div>
       )))
@@ -53,6 +76,15 @@ const NavShopcart = props => {
           </button>
         </div>)}
         
+
+        {/* <div class="col span-2-of-3">
+              <select id="find-us" name="find-us">
+                <option value="friends">Friends</option>
+                <option value="search">Search engine</option>
+                <option value="ad">Advertisement</option>
+                <option value="other">Other</option>
+              </select>
+            </div> */}
       </div>
     </div>
   );
