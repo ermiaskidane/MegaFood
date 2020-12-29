@@ -75,16 +75,6 @@ const NavShopcart = props => {
             <NavLink to="/shop">Go to The Shop</NavLink>
           </button>
         </div>)}
-        
-
-        {/* <div class="col span-2-of-3">
-              <select id="find-us" name="find-us">
-                <option value="friends">Friends</option>
-                <option value="search">Search engine</option>
-                <option value="ad">Advertisement</option>
-                <option value="other">Other</option>
-              </select>
-            </div> */}
       </div>
     </div>
   );
