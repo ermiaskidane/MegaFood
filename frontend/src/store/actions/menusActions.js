@@ -7,7 +7,7 @@ import {
       MENU_REMOVE_ITEM
   } from "../constants/menusConstants"
 
-  export const detailMenus = (id) => async(dispatch)  => {
+  export const detailMenus = (id) => async(dispatch, getState)  => {
 
 
         const { data } = await axios.get(`/api/homeScreen/menus/${id}`)
@@ -22,7 +22,9 @@ import {
                 oldPrice: data.oldPrice,
                 offer: data.offer
             }
-        }) 
+        })
+        
+        localStorage.setItem("menusItem", JSON.stringify(getState().menusDetail.menusItem))
   }
  
  
