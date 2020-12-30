@@ -15,7 +15,7 @@ const NavShopcart = props => {
 
   const removeFromDetailMenusHandler = (id) => {
     console.log(id)
-    // dispatch(removeFromMenus(id))
+    dispatch(removeFromMenus(id))
   }
  
   return (
@@ -30,10 +30,18 @@ const NavShopcart = props => {
             <use xlinkHref={`${Sprite}#icon-circle`} />
           </svg>
         </div>
-    {menusItem.length !== 0 ? 
+
+    {menusItem.length === 0 ?(
+      <div className="navShopcart__detail--content">
+          <h2>Your Shopping Bag is Empty</h2>
+          <button>
+            <NavLink to="/shop">Go to The Shop</NavLink>
+          </button>
+      </div>
+    ):
     (menusItem.map((item) => 
-    (<div className="navShopcart__detail--menu">
-      <ul key={item.menu}>
+    (<div className="navShopcart__detail--menu" key={item.menu}>
+      <ul>
       <li>
         <figure>
           <NavLink to="/">
@@ -69,14 +77,9 @@ const NavShopcart = props => {
     </ul>
     </div>
       )))
-    : (<div className="navShopcart__detail--content">
-          <h2>Your Shopping Bag is Empty</h2>
-          <button>
-            <NavLink to="/shop">Go to The Shop</NavLink>
-          </button>
-        </div>)}
-       
-         <div className="navShopcart__detail--pay">
+    }
+        
+        <div className="navShopcart__detail--pay">
           <h2>total: <span>£0.00</span></h2> 
           <button type="button">Proceed To payment</button>
         </div>
