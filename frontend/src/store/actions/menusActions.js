@@ -27,6 +27,14 @@ import {
         localStorage.setItem("menusItem", JSON.stringify(getState().menusDetail.menusItem))
   }
  
+  export const removeFromMenus = (id) => (dispatch, getState) => {
+    dispatch({
+      type: MENU_REMOVE_ITEM,
+      payload: id,
+    })
+  
+    localStorage.setItem("menusItem", JSON.stringify(getState().menusDetail.menusItem))
+  }
  
 //   export const detailMenus = (id) => async(dispatch)  => {
 //     try {
