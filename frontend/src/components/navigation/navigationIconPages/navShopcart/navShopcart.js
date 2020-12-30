@@ -75,6 +75,11 @@ const NavShopcart = props => {
             <NavLink to="/shop">Go to The Shop</NavLink>
           </button>
         </div>)}
+       
+         <div className="navShopcart__detail--pay">
+          <h2>total: <span>£0.00</span></h2> 
+          <button type="button">Proceed To payment</button>
+        </div>
       </div>
     </div>
   );
