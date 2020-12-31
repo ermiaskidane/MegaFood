@@ -69,7 +69,7 @@ const Menu = () => {
              </div>
            </div>
            {/* ##### purchase Content ##### */}
-          <p onClick={() => addToCartHandler(menu._id)}>{menu.name}</p>
+          <p onClick={() => addToCartHandler(menu._id, qty)}>{menu.name}</p>
           <p>
             {
               menu.oldPrice ? (<s>${menu.oldPrice}</s>) : null}
