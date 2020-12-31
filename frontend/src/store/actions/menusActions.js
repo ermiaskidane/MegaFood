@@ -6,10 +6,10 @@ import {
       MENU_ADD_ITEM,
       MENU_REMOVE_ITEM
   } from "../constants/menusConstants"
+  
+  export const detailMenus = (id, qty) => async(dispatch, getState)  => {
 
-  export const detailMenus = (id) => async(dispatch, getState)  => {
-
-
+ 
         const { data } = await axios.get(`/api/homeScreen/menus/${id}`)
 
         dispatch({
@@ -20,13 +20,14 @@ import {
                 image: data.image,
                 price: data.price,
                 oldPrice: data.oldPrice,
-                offer: data.offer
+                offer: data.offer,
+                qty
             }
-        })
-        
-        localStorage.setItem("menusItem", JSON.stringify(getState().menusDetail.menusItem))
+        }) 
+
+    localStorage.setItem("menusItem", JSON.stringify(getState().menusDetail.menusItem))
   }
- 
+
   export const removeFromMenus = (id) => (dispatch, getState) => {
     dispatch({
       type: MENU_REMOVE_ITEM,
@@ -35,3 +36,4 @@ import {
   
     localStorage.setItem("menusItem", JSON.stringify(getState().menusDetail.menusItem))
   }
+ 
