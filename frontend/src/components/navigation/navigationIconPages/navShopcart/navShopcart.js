@@ -78,11 +78,15 @@ const NavShopcart = props => {
     </div>
       )))
     }
-        
+     {menusItem.length !== 0 ? (
         <div className="navShopcart__detail--pay">
-          <h2>total: <span>£0.00</span></h2> 
+          <h2>total: ({menusItem.reduce((acc, item) => acc + item.qty, 0)}) orders</h2>
+          <h3>£({menusItem.reduce((acc, item) => acc + item.qty * item.price, 0).toFixed(2)})</h3>
           <button type="button">Proceed To payment</button>
         </div>
+    ) : (
+      null
+    )}
       </div>
     </div>
   );
