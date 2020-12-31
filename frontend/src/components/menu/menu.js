@@ -10,6 +10,7 @@ import { detailMenus} from "../../store/actions/menusActions"
 const Menu = () => {
 
   const [menus, setMenus] = useState([])
+  const [qty, setQty] = useState(1)
 
   const dispatch = useDispatch()
   
@@ -22,9 +23,8 @@ const Menu = () => {
     fetchMenus()
   }, [])
 
-  const addToCartHandler = (id) => {
-    console.log(id)
-    dispatch(detailMenus(id))
+  const addToCartHandler = (id, qty) => {
+    dispatch(detailMenus(id, qty))
   }
   return (
     <div className="menu">
