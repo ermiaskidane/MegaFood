@@ -18,6 +18,7 @@ const NavShopcart = props => {
     dispatch(removeFromMenus(id))
   }
  
+  console.log(menusItem)
   return (
     <div className="navShopcart">
       <div className="navShopcart__detail">
@@ -78,7 +79,7 @@ const NavShopcart = props => {
     </div>
       )))
     }
-     {menusItem.length !== 0 ? (
+    {menusItem.length !== 0 ? (
         <div className="navShopcart__detail--pay">
           <h2>total: ({menusItem.reduce((acc, item) => acc + item.qty, 0)}) orders</h2>
           <h3>£({menusItem.reduce((acc, item) => acc + item.qty * item.price, 0).toFixed(2)})</h3>
