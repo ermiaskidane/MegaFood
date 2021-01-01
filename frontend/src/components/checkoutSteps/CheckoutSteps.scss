@@ -1,0 +1,15 @@
+@import "../../style/config";
+
+.checkoutStep {
+  display: flex;
+  width: 50%;
+  margin: 0 auto;
+  padding-top: 0.5rem;
+
+  &__content {
+    width: 100%;
+  }
+  a {
+    text-decoration: none;
+  }
+}

@@ -1,24 +1,22 @@
-import React, { Component } from "react";
+import React from "react";
 import Navigation from "../../components/navigation/navigation";
 import Footer from "../../components/footer/footer";
 
 import "./layout.scss";
- 
-class Layout extends Component {
-  render() {
+
+const Layout = (props) => {
     return (
-      <React.Fragment>
+      <>
         <Navigation
-          open={this.props.openHandler}
-          search={this.props.searchBar}
-          signup={this.props.signup}
-          shopcart={this.props.shopcart}
+          open={props.openHandler}
+          search={props.searchBar}
+          signup={props.signup}
+          shopcart={props.shopcart}
         />
-        <main>{this.props.children}</main>
+        <main>{props.children}</main>
         <Footer />
-      </React.Fragment>
+      </>
     );
-  }
-}
+} 
 
 export default Layout;

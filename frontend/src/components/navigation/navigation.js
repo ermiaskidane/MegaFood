@@ -13,6 +13,10 @@ const Navigation = props => {
   const userLogin = useSelector(state => state.userLogin)
   const { userInfo } = userLogin
 
+  const menuItem = useSelector((state) => state.menusDetail)
+  const { menusItem, shopCartReducer }  = menuItem
+ 
+
   const logoutHandler = () => {
     console.log("logout")
     dispatch(logout())
@@ -43,7 +47,7 @@ const Navigation = props => {
               </li>
             </ul>
           </div>
- 
+   
           <div className="header__nav--icon">
             <svg onClick={props.search}>
               <use xlinkHref={`${Sprite}#icon-magnifying-glass`} />
@@ -60,9 +64,15 @@ const Navigation = props => {
             <svg onClick={props.shopcart}>
               <use xlinkHref={`${Sprite}#icon-shopping-bag`} />
             </svg>
+            {menusItem.length !== 0 ? (
+              <span className="header__nav--icon--notification">{menusItem.length}</span>
+            ) : (
+              null
+            )}
+            
           </div>
         </nav>
-      </div>
+      </div> 
       {/*######  mobile nav #######*/}
       <nav className="mobile__content">
         <p onClick={props.open} className="mobile__button">

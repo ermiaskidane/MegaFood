@@ -7,7 +7,7 @@ import Message from '../../../Message'
 import Loader from '../../../Loader'
 // import { NavLink } from "react-router-dom";
 import { register } from '../../../../store/actions/userActions'
-
+ 
 import Sprite from "../../../../assets/images/sprite.svg";
 
 const NavSignup = (props) => {

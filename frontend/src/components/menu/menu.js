@@ -1,15 +1,19 @@
 import React, { useState, useEffect} from "react";
+import { useDispatch, useSelector } from "react-redux"
 import { NavLink } from "react-router-dom";
 import axios from "axios"
 
 import "./menu.scss";
-
 import Sprite from "../../assets/images/sprite.svg";
+import { detailMenus} from "../../store/actions/menusActions"
 
 const Menu = () => {
 
   const [menus, setMenus] = useState([])
+  const [qty, setQty] = useState(1)
 
+  const dispatch = useDispatch()
+  
   useEffect(() => {
     const fetchMenus = async () => {
       const { data } = await axios.get("/api/homeScreen/menus")
@@ -19,6 +23,10 @@ const Menu = () => {
     fetchMenus()
   }, [])
 
+  const addToCartHandler = (id, qty) => {
+    console.log(id)
+    dispatch(detailMenus(id, qty))
+  }
   return (
     <div className="menu">
       <h2>Menu</h2>
@@ -62,7 +70,7 @@ const Menu = () => {
              </div>
            </div>
            {/* ##### purchase Content ##### */}
-          <p>{menu.name}</p>
+          <p onClick={() => addToCartHandler(menu._id, qty)}>{menu.name}</p>
           <p>
             {
               menu.oldPrice ? (<s>${menu.oldPrice}</s>) : null}

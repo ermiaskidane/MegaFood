@@ -1,4 +1,7 @@
+// import React, {useState, useEffect } from "react";
 import React, { Component } from "react";
+import { connect } from "react-redux";
+// import {useDispatch, useSelector } from "react-redux";
 import {BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import MegaFood from "./container/megafood/megafood";
 
@@ -7,6 +10,7 @@ import Backdrop from "./components/backdrop/backdrop";
 import Shop from "./container/shop/shop";
 import Feature from "./container/feature/feature";
 import Contact from "./container/contact/contact";
+import Shipping from "./container/shipping/shipping";
 import NavSearch from "./components/navigation/navigationIconPages/navSearch/navSearch";
 import NavSignin from "./components/navigation/navigationIconPages/navSignin/navSignin";
 import NavSignup from "./components/navigation/navigationIconPages/navSignup/navSignup";
@@ -98,6 +102,7 @@ class App extends Component {
   render() {
     console.log(this.state.signin, "render")
     console.log(this.state.searchPage, "Searchpage");
+    console.log(this.props.menuDetail)
     let modals = null;
     let page = null;
     let signinPage = null;
@@ -132,16 +137,16 @@ class App extends Component {
         <Backdrop open={this.signupClose} />
         {/* <Backdrop open={this.signupHandler} /> */}
         </React.Fragment>
-      );
-    } else if (this.state.shopcart) {
+      ); 
+    } else if (this.state.shopcart || this.props.menuDetail.shopCartReducer) {
       shopcartPage = (
         <React.Fragment>
-          <NavShopcart show={this.shopcartHandler} />
+          <NavShopcart show={this.shopcartHandler} signup={this.signupOpen} />
           <Backdrop open={this.shopcartHandler} />
         </React.Fragment>
       );
-    }
-
+    } 
+ 
     return (
       <Router>
       <div>
@@ -157,6 +162,7 @@ class App extends Component {
           {signupPage}
           {shopcartPage}
           <Switch>
+            <Route path="/shipping" component={Shipping} />
             <Route path="/shop" component={Shop} />
             <Route path="/feature" component={Feature} />
             <Route path="/contact" component={Contact} />
@@ -170,4 +176,10 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    menuDetail: state.menusDetail
+  }
+}
+
+export default connect(mapStateToProps)(App);

@@ -1,0 +1,51 @@
+@import "../../style/config";
+.shipping {
+  margin-top: 118.92px;
+  font-family: $font-secondary;
+  color: $color-light-black-1;
+
+  h1 {
+    display: flex;
+    width: 50%;
+    margin: 1rem auto;
+
+    font-size: 1.6rem;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    margin-bottom: 1rem;
+
+    .shipping__form {
+      width: 50%;
+      margin: 0 auto;
+    }
+
+    input {
+      padding: 1rem 0;
+      padding-left: 8px;
+      width: 100%;
+      margin-bottom: 1rem;
+      border-radius: 5px;
+      border: 1px solid $color-grey-dark-2;
+    }
+
+    input:focus {
+      outline: none;
+    }
+
+    .shipping--button {
+      padding: 0.8rem 0.6rem;
+      background-color: black;
+      color: white;
+      border: none;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+  }
+}

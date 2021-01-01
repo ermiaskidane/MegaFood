@@ -6,15 +6,23 @@ import {
     userRegisterReducer,
 } from "./store/reducers/userReducers"
 
+import { 
+    menusDetailReducer
+} from "./store/reducers/menusReducers"
+
 const reducer = combineReducers({
     userLogin: userLoginReducer,
     userRegister: userRegisterReducer,
+    menusDetail: menusDetailReducer
 })
+const menusItemsFromStorage = localStorage.getItem("menusItem") ? 
+    JSON.parse(localStorage.getItem("menusItem")) : []
 
 const userInfoFromStorage = localStorage.getItem("userInfo") ? 
     JSON.parse(localStorage.getItem("userInfo")) : null
 
 const initialState = {
+    menusDetail: { menusItem: menusItemsFromStorage},
     userLogin: { userInfo: userInfoFromStorage }
 }
 

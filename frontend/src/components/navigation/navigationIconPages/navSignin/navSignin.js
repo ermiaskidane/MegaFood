@@ -1,4 +1,4 @@
-import React, {useState, useEffect }from "react";
+import React, {useState, useEffect } from "react";
 import {useDispatch, useSelector} from "react-redux";
 import { useHistory } from "react-router-dom";
 // https://www.pluralsight.com/guides/using-react-with-the-history-api
