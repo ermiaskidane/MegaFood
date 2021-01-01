@@ -26,11 +26,11 @@ app.get("/", (req, res) => {
  
 app.use("/api/homeScreen", menuRoutes)
 
-app.get("/api/menus/:id", (req, res) => {
-  const menu = menus.find((m) => m._id ===req.params.id)
+// app.get("/api/menus/:id", (req, res) => {
+//   const menu = menus.find((m) => m._id ===req.params.id)
 
-  res.json(menu)
-})
+//   res.json(menu)
+// })
 
 app.use("/api/shop", shopRoutes)
 
@@ -59,5 +59,5 @@ app.use((err, req, res, next) => {
     })
 })
 
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 5001
 app.listen(PORT, console.log(`Server is running in ${process.env.NODE_ENV} mode port ${PORT}`));
