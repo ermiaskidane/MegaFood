@@ -45,14 +45,5 @@ export const menusDetailReducer = (state = {menusItem: [], shippingAddress: {}},
                 }
             default:
                 return state
-        
-        // case MENUS_FOOD_REQUEST:
-        //     return {loading: true}
-        // case MENUS_FOOD_SUCCESS:
-        //     return {loading: false, menu: action.payload}
-        // case MENUS_FOOD_FAIL:
-        //     return { loading: false, error: action.payload}
-        // default:
-        //     return state
     }
 } 
