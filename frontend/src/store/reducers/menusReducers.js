@@ -33,6 +33,16 @@ export const menusDetailReducer = (state = {menusItem: []}, action) => {
                     ...state,
                     menusItem: state.cartItems.filter((x) => x.menu !== action.payload)
                 }
+            case MENU_SAVE_SHIPPING_ADDRESS:
+                return{
+                    ...state,
+                    shippingAddress: action.payload
+                }
+            case MENU_SAVE_PAYMENT_METHOD:
+                return {
+                    ...state,
+                    paymentMethod: action.payload
+                }
             default:
                 return state
     }
