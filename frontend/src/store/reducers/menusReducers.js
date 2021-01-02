@@ -8,7 +8,7 @@ import {
     MENU_SAVE_PAYMENT_METHOD
 } from "../constants/menusConstants"
 
-export const menusDetailReducer = (state = {menusItem: []}, action) => {
+export const menusDetailReducer = (state = {menusItem: [],  shippingAddress: {}}, action) => {
     switch (action.type) {
         case MENU_ADD_ITEM:
             const item = action.payload
