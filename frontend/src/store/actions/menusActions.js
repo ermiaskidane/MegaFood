@@ -37,10 +37,17 @@ import {
     localStorage.setItem("menusItem", JSON.stringify(getState().menusDetail.menusItem))
   }
   
-   export const saveShippingAddress = (data) => (dispatch) => {
+ export const saveShippingAddress = (data) => (dispatch) => {
     dispatch({
       type: MENU_SAVE_SHIPPING_ADDRESS,
       payload: data
     })
   }
  
+   
+ export const savePaymentMethod = (data) => (dispatch) => {
+    dispatch({
+      type: MENU_SAVE_PAYMENT_METHOD,
+      payload: data
+    })
+  }
