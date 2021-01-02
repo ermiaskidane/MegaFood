@@ -3,7 +3,9 @@ import {
     MENUS_FOOD_SUCCESS,
     MENUS_FOOD_FAIL,
     MENU_ADD_ITEM,
-    MENU_REMOVE_ITEM
+    MENU_REMOVE_ITEM,
+    MENU_SAVE_SHIPPING_ADDRESS,
+    MENU_SAVE_PAYMENT_METHOD
 } from "../constants/menusConstants"
 
 export const menusDetailReducer = (state = {menusItem: []}, action) => {
