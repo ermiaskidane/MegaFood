@@ -11,6 +11,7 @@ import Shop from "./container/shop/shop";
 import Feature from "./container/feature/feature";
 import Contact from "./container/contact/contact";
 import Shipping from "./container/shipping/shipping";
+import Payment from "./container/payment/payment";
 import NavSearch from "./components/navigation/navigationIconPages/navSearch/navSearch";
 import NavSignin from "./components/navigation/navigationIconPages/navSignin/navSignin";
 import NavSignup from "./components/navigation/navigationIconPages/navSignup/navSignup";
@@ -162,6 +163,7 @@ class App extends Component {
           {signupPage}
           {shopcartPage}
           <Switch>
+            <Route path="/payment" component={Payment} />
             <Route path="/shipping" component={Shipping} />
             <Route path="/shop" component={Shop} />
             <Route path="/feature" component={Feature} />

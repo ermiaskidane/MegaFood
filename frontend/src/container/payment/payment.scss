@@ -1,0 +1,47 @@
+@import "../../style/config";
+.payment {
+  margin-top: 118.92px;
+  font-family: $font-secondary;
+  color: $color-light-black-1;
+
+  @media only screen and (max-width: $bp-medium) {
+    margin-top: 70px;
+  }
+
+  h1 {
+    display: flex;
+    width: 50%;
+    margin: 1rem auto;
+
+    font-size: 1.6rem;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    margin-bottom: 1rem;
+  }
+  &__form {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  label {
+    padding-left: 8px;
+  }
+
+  .payment--button {
+    display: block;
+    margin-top: 1rem;
+    padding: 0.8rem 0.6rem;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+}

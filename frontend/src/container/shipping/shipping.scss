@@ -4,6 +4,10 @@
   font-family: $font-secondary;
   color: $color-light-black-1;
 
+  @media only screen and (max-width: $bp-medium) {
+    margin-top: 70px;
+  }
+
   h1 {
     display: flex;
     width: 50%;
@@ -41,8 +45,8 @@
 
     .shipping--button {
       padding: 0.8rem 0.6rem;
-      background-color: black;
-      color: white;
+      background-color: #000;
+      color: #fff;
       border: none;
       text-transform: uppercase;
       cursor: pointer;

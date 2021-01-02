@@ -3,10 +3,12 @@ import {
     MENUS_FOOD_SUCCESS,
     MENUS_FOOD_FAIL,
     MENU_ADD_ITEM,
-    MENU_REMOVE_ITEM
+    MENU_REMOVE_ITEM,
+    MENU_SAVE_SHIPPING_ADDRESS,
+    MENU_SAVE_PAYMENT_METHOD
 } from "../constants/menusConstants"
 
-export const menusDetailReducer = (state = {menusItem: []}, action) => {
+export const menusDetailReducer = (state = {menusItem: [], shippingAddress: {}}, action) => {
     switch (action.type) {
         case MENU_ADD_ITEM:
             const item = action.payload
@@ -30,6 +32,16 @@ export const menusDetailReducer = (state = {menusItem: []}, action) => {
                 return {
                     ...state,
                     menusItem: state.menusItem.filter((x) => x.menu !== action.payload)
+                }
+            case MENU_SAVE_SHIPPING_ADDRESS:
+                return{
+                    ...state,
+                    shippingAddress: action.payload
+                }
+            case MENU_SAVE_PAYMENT_METHOD:
+                return {
+                    ...state,
+                    paymentMethod: action.payload
                 }
             default:
                 return state

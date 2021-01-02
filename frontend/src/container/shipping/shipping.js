@@ -2,23 +2,24 @@ import React, { useState} from "react"
 import { useDispatch, useSelector } from 'react-redux'
 
 import CheckoutSteps from "../../components/checkoutSteps/CheckoutSteps"
+import { saveShippingAddress} from "../../store/actions/menusActions"
 import "./shipping.scss"
 
-const Shipping = () => {
+const Shipping = ({history}) => {
 //   const cart = useSelector((state) => state.cart)
 //   const { shippingAddress } = cart
 
-  const [address, setAddress] = useState()
-  const [city, setCity] = useState()
-  const [postalCode, setPostalCode] = useState()
-  const [country, setCountry] = useState()
+  const [address, setAddress] = useState("")
+  const [city, setCity] = useState("")
+  const [postalCode, setPostalCode] = useState("")
+  const [country, setCountry] = useState("")
 
-//   const dispatch = useDispatch()
+  const dispatch = useDispatch()
 
   const submitHandler = (e) => {
     e.preventDefault()
-    // dispatch(saveShippingAddress({ address, city, postalCode, country }))
-    // history.push('/payment')
+    dispatch(saveShippingAddress({ address, city, postalCode, country }))
+    history.push('/payment')
   }
 
   return (
@@ -27,7 +28,6 @@ const Shipping = () => {
         <h1>Shipping</h1>
 
         <form  onSubmit={submitHandler}>
-            {/* <h1>Shipping</h1> */}
             <div className="shipping__form">
             <input 
                 type="text" 
