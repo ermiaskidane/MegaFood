@@ -18,9 +18,6 @@ const reducer = combineReducers({
 const menusItemsFromStorage = localStorage.getItem("menusItem") ? 
     JSON.parse(localStorage.getItem("menusItem")) : []
 
-const menusItemsFromStorage = localStorage.getItem("menusItem") ? 
-    JSON.parse(localStorage.getItem("menusItem")) : []
-
 const userInfoFromStorage = localStorage.getItem("userInfo") ? 
     JSON.parse(localStorage.getItem("userInfo")) : null
 
