@@ -11,6 +11,7 @@ import userRoutes from "./routes/userRoutes.js"
 import menuRoutes from "./routes/menuRoutes.js"
 import shopRoutes from "./routes/shopRoutes.js"
 import featureRoutes from "./routes/featureRoutes.js"
+import orderRoutes from "./routes/orderRoutes.js"
 
 dotenv.config()
 
@@ -37,6 +38,8 @@ app.use("/api/shop", shopRoutes)
 app.use("/api/feature", featureRoutes)
 
 app.use("/api/users", userRoutes)
+
+app.use("/api/orders", orderRoutes)
 
 // // Custom Error Handler for Routes does not exist
 // app.use(notFound);
