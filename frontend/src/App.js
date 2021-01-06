@@ -163,6 +163,8 @@ class App extends Component {
           {signupPage}
           {shopcartPage}
           <Switch>
+            <Route path="/order/:id" component={OrderScreen} />
+            <Route path="/placeorder" component={PlaceOrder} />
             <Route path="/payment" component={Payment} />
             <Route path="/shipping" component={Shipping} />
             <Route path="/shop" component={Shop} />
