@@ -9,11 +9,15 @@ import {
 import { 
     menusDetailReducer
 } from "./store/reducers/menusReducers"
+import { 
+    orderCreateReducer
+} from "./store/reducers/orderReducers"
 
 const reducer = combineReducers({
     userLogin: userLoginReducer,
     userRegister: userRegisterReducer,
-    menusDetail: menusDetailReducer
+    menusDetail: menusDetailReducer,
+    orderCreate: orderCreateReducer
 })
 const menusItemsFromStorage = localStorage.getItem("menusItem") ? 
     JSON.parse(localStorage.getItem("menusItem")) : []

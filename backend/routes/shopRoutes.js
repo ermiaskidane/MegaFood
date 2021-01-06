@@ -1,14 +1,13 @@
 import express from "express"
-import {bestSellerImg, AllSellers} from "../data/menus.js"
+
+import { getBestSeller, getAllSeller} from "../controllers/ShopController.js"
 
 const router = express.Router()
 
-router.get("/bestsellers", (req, res) => {
-    res.json(bestSellerImg)
-})
+router.get("/bestsellers", getBestSeller)
 
-router.get("/sellers", (req, res) => {
-    res.json(AllSellers)
-})
+
+router.get("/sellers", getAllSeller)
+
 
 export default router

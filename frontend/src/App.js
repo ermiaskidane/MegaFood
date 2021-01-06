@@ -12,6 +12,8 @@ import Feature from "./container/feature/feature";
 import Contact from "./container/contact/contact";
 import Shipping from "./container/shipping/shipping";
 import Payment from "./container/payment/payment";
+import PlaceOrder from "./container/placeOrder/placeOrder";
+import OrderScreen from "./container/orderScreen/orderScreen";
 import NavSearch from "./components/navigation/navigationIconPages/navSearch/navSearch";
 import NavSignin from "./components/navigation/navigationIconPages/navSignin/navSignin";
 import NavSignup from "./components/navigation/navigationIconPages/navSignup/navSignup";
@@ -163,6 +165,8 @@ class App extends Component {
           {signupPage}
           {shopcartPage}
           <Switch>
+          <Route path="/order/:id" component={OrderScreen} />
+          <Route path="/placeorder" component={PlaceOrder} />
             <Route path="/payment" component={Payment} />
             <Route path="/shipping" component={Shipping} />
             <Route path="/shop" component={Shop} />

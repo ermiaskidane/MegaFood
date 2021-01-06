@@ -9,7 +9,7 @@ const menus = [
         offer: "Sale",
         rating: 4.5,
         numReviews: 12
-    },
+    }, 
     {
         _id: "2",
         name: "Mini Burger",
