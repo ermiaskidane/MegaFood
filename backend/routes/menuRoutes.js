@@ -1,5 +1,6 @@
 import express from "express"
 import {menus, PurchaseImg} from "../data/menus.js"
+import { getMenus, getMenusById} from "../controllers/menuController.js"
 
 const router = express.Router()
 
@@ -7,20 +8,9 @@ router.get("/purchase", (req, res) => {
     res.json(PurchaseImg)
 })  
 
-router.get("/menus", (req, res) => {
-    res.json(menus)
-})
 
-router.get("/menus/:id", (req, res) => {
-    const menu = menus.find((m) => m._id === req.params.id)
-  
-    res.json(menu)
-})
+router.get("/menus", getMenus)
 
-// app.get("/api/menus/:id", (req, res) => {
-//     const menu = menus.find((m) => m._id ===req.params.id)
-  
-//     res.json(menu)
-//   })
+router.get("/menus/:id", getMenusById)
   
 export default router

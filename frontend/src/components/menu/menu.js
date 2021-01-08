@@ -73,8 +73,8 @@ const Menu = () => {
           <p onClick={() => addToCartHandler(menu._id, qty)}>{menu.name}</p>
           <p>
             {
-              menu.oldPrice ? (<s>${menu.oldPrice}</s>) : null}
-              <span style={{ paddingLeft: "0.3rem" }}>${menu.price}</span>
+              menu.oldPrice ? (<s>${(menu.oldPrice).toFixed(2)}</s>) : null}
+              <span style={{ paddingLeft: "0.3rem" }}>${(menu.price).toFixed(2)}</span>
           </p>
         </div>
           ))}
