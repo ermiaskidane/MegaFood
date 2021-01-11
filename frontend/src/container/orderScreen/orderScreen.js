@@ -5,6 +5,7 @@ import { Link } from "react-router-dom"
 import { useDispatch, useSelector } from 'react-redux'
 import Message from '../../components/Message'
 import Loader from '../../components/Loader'
+import "./orderScreen.scss"
 
 import  { getOrderMenusDetails } from "../../store/actions/orderActions"
 import {
@@ -69,7 +70,7 @@ const OrderScreen = ({ match, history }) => {
     const successPaymentHandler = (paymentResult) => {
         console.log(paymentResult)
         dispatch(orderPayment(orderId, paymentResult))
-      }
+      } 
     return loading ? (
         <Loader/>
     ) : error ? (
@@ -83,15 +84,15 @@ const OrderScreen = ({ match, history }) => {
                         <div className="orderScreen__column1--shipping">
                             <h2>Shipping</h2>
                             <p>
-                                <strong>Name:</strong> {order.user.name}
+                                Name: {order.user.name}
                             </p>
                             <p>
-                                <strong>Email: </strong> 
-                                <a href={` mailto:${order.user.email}`}>{order.user.email}</a>
+                                Email:   
+                                <a href={` mailto:${order.user.email}`}> {order.user.email}</a>
                             </p>
                             <p>
-                                <strong>Address: </strong>
-                                {order.shippingAddress.address}, {order.shippingAddress.city}{' '}
+                                Address: 
+                                 {order.shippingAddress.address}, {order.shippingAddress.city}{' '}
                                 {order.shippingAddress.postalCode},{' '}
                                 {order.shippingAddress.country}
                              </p>
@@ -108,7 +109,7 @@ const OrderScreen = ({ match, history }) => {
                         <div className="orderScreen__column1--payment">
                             <h2> Payment Method</h2>
                             <p>
-                                <strong>Method</strong>
+                                Method:
                                 { order.paymentMethod}
                             </p>
                             {order.isPaid ? (
@@ -162,11 +163,13 @@ const OrderScreen = ({ match, history }) => {
                                     { loadingPay && <Loader/> }
                                     {!sdkReady ? (
                                         <Loader/>
-                                    ) :(
-                                        <PayPalButton
-                                        amount={order.totalPrice}
-                                        onSuccess={successPaymentHandler}
-                                      /> 
+                                    ) :( <button>
+                                            <PayPalButton
+                                            amount={order.totalPrice}
+                                            onSuccess={successPaymentHandler}
+                                            style={{width: "100%"}}
+                                        />
+                                      </button> 
                                     )}
                                 </li>
                             )} 
