@@ -1,0 +1,166 @@
+@import "../../style/config";
+.orderScreen {
+  margin-top: 118.92px;
+  margin-bottom: 3rem;
+  font-family: $font-secondary;
+  color: $color-light-black-1;
+
+  @media only screen and (max-width: $bp-medium) {
+    margin-top: 70px;
+  }
+
+  h1 {
+    display: flex;
+    margin: 0 auto;
+    padding-top: 1rem;
+    width: 90%;
+
+    font-size: 2rem;
+    color: $color-light-black-1;
+    text-transform: uppercase;
+
+    @media only screen and (max-width: $bp-medium) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__columns {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-column-gap: 2rem;
+
+    width: 90%;
+    margin: 2rem auto 0 auto;
+
+    @media only screen and (max-width: $bp-medium) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(2, min-content);
+    }
+  }
+
+  &__column1 {
+    grid-column: 1/2;
+
+    @media only screen and (max-width: $bp-medium) {
+      grid-column: 1/-1;
+      grid-row: 1/ 2;
+    }
+
+    display: flex;
+    flex-direction: column;
+
+    &--shipping,
+    &--payment {
+      padding-bottom: 2rem;
+      border-bottom: 1px solid $color-grey-dark-3;
+    }
+
+    &--shipping h2,
+    &--payment h2,
+    &--orders h2 {
+      display: flex;
+      margin: 1rem auto;
+
+      font-size: 1.2rem;
+      font-weight: 300;
+      text-transform: uppercase;
+    }
+
+    &--shipping p,
+    &--payment p {
+      color: $color-gray-dark-1;
+      padding-bottom: 0.7rem;
+    }
+
+    &--shipping p a {
+      text-decoration: none;
+      color: $color-gray-dark-1;
+    }
+
+    &--shipping .danger,
+    &--payment .danger {
+      color: $color-gray-dark-1;
+      padding: 8px 0 8px 8px;
+      background-color: #e7c5c5;
+    }
+
+    &--shipping .success,
+    &--payment .success {
+      color: $color-gray-dark-1;
+      padding: 8px 0 8px 8px;
+      background-color: #bbeebb;
+    }
+
+    &--orders {
+      .orderScreen__item--lists {
+        list-style: none;
+
+        display: grid;
+        grid-template-columns: minmax(30px, 40px) 2fr 1fr;
+        align-items: bottom;
+
+        li img {
+          width: 35px;
+          height: 25px;
+          border-radius: 3px;
+        }
+
+        li a {
+          text-decoration: none;
+          color: $color-gray-dark-1;
+        }
+
+        li:nth-child(2) {
+          padding-left: 1.5rem;
+        }
+        li {
+          padding: 10px 0;
+          border-bottom: 1px solid $color-grey-dark-3;
+        }
+      }
+    }
+  }
+
+  &__column2 {
+    grid-column: 2 /-1;
+    margin-top: 0.6rem;
+
+    @media only screen and (max-width: $bp-medium) {
+      grid-column: 1/-1;
+      grid-row: 2/ -1;
+    }
+
+    .summary--lists {
+      list-style: none;
+      border: 1px solid $color-grey-dark-3;
+      border-radius: 2px;
+    }
+
+    .summary--list h2 {
+      display: flex;
+      margin: 1rem auto;
+
+      font-size: 1.2rem;
+      font-weight: 300;
+      text-transform: uppercase;
+    }
+
+    .summary--lists li {
+      border-bottom: 1px solid $color-grey-dark-3;
+      padding: 10px 1rem;
+
+      display: flex;
+      justify-content: space-between;
+
+      span {
+        margin: 0 auto;
+      }
+    }
+
+    button {
+      width: 100%;
+      border: none;
+      background-color: transparent;
+    }
+  }
+}
