@@ -75,7 +75,7 @@ export const getOrderMenusDetails = (id) => async (dispatch, getState) => {
     }
 }
 
-export const orderPayment =  (orderId, paymentResult) => async (
+export const payOrder =  (orderId, paymentResult) => async (
     dispatch,
     getState
   ) => {
