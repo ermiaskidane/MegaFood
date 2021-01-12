@@ -81,6 +81,7 @@
         font-size: 0.8rem;
         text-decoration: none;
         font-family: $font-primary;
+        font-variant-numeric: normal;
       }
       p s::after {
         content: "";
