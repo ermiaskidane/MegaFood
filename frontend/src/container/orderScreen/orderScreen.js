@@ -7,7 +7,7 @@ import Message from '../../components/Message'
 import Loader from '../../components/Loader'
 import "./orderScreen.scss"
 
-import  { getOrderMenusDetails } from "../../store/actions/orderActions"
+import  { getOrderMenusDetails, payOrder } from "../../store/actions/orderActions"
 import {
     ORDER_PAYMENT_RESET
 } from "../../store/constants/orderConstants"
@@ -21,7 +21,7 @@ const OrderScreen = ({ match, history }) => {
 
     const orderMenuDetails = useSelector((state) => state.orderMenuDetails)
     const { order, loading, error } = orderMenuDetails
-
+ 
     const orderPayment = useSelector((state) => state.orderPayment)
     const { loading: loadingPay, success: successPay } = orderPayment
 
@@ -49,7 +49,8 @@ const OrderScreen = ({ match, history }) => {
             const script = document.createElement("script")
             script.type = "text/javascript"
             script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}`
-            script.async= script.onload = () => {
+            script.async= true
+            script.onload = () => {
                 setSdkReady(true)
             }
             document.body.appendChild(script)
@@ -65,11 +66,11 @@ const OrderScreen = ({ match, history }) => {
                 setSdkReady(true)
             }
         }
-    }, [dispatch, order, successPay, userInfo])
+    }, [dispatch, order, orderId, successPay, userInfo])
 
     const successPaymentHandler = (paymentResult) => {
         console.log(paymentResult)
-        dispatch(orderPayment(orderId, paymentResult))
+        dispatch(payOrder(orderId, paymentResult))
       } 
     return loading ? (
         <Loader/>
@@ -158,7 +159,7 @@ const OrderScreen = ({ match, history }) => {
                             <li>
                                 {error && <Message className="danger">{error}</Message>}
                             </li>
-                            {!order.ispaid && (
+                            {!order.isPaid && (
                                 <li>
                                     { loadingPay && <Loader/> }
                                     {!sdkReady ? (
@@ -167,7 +168,6 @@ const OrderScreen = ({ match, history }) => {
                                             <PayPalButton
                                             amount={order.totalPrice}
                                             onSuccess={successPaymentHandler}
-                                            style={{width: "100%"}}
                                         />
                                       </button> 
                                     )}
