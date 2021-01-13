@@ -55,8 +55,6 @@
     }
 
     &--menu {
-      // background-color: red;
-      // margin-right: 2rem;
       color: $color-light-black-1;
 
       ul {
@@ -94,7 +92,6 @@
       }
       ul li a:hover {
         color: $color-primary-4;
-        // opacity: 0.5;
       }
 
       //#########
@@ -125,8 +122,6 @@
         position: absolute;
         top: 5px;
         right: 0px;
-        // border-bottom: 1px solid $color-grey-dark-3;
-        // border-right: 1px solid $color-grey-dark-3;
       }
     }
 
