@@ -103,8 +103,7 @@ class App extends Component {
   };
 
   render() {
-    console.log(this.state.signin, "render")
-    console.log(this.state.searchPage, "Searchpage");
+    console.log(this.state.shopcart, "App")
     console.log(this.props.menuDetail)
     let modals = null;
     let page = null;
@@ -114,41 +113,46 @@ class App extends Component {
 
     if (this.state.modal) {
       modals = (
-        <React.Fragment>
-          <Modal open={this.openHandler} signin={this.signInHandler}/>
+        <>
+          <Modal open={this.openHandler} signin={this.signInHandler} />
           <Backdrop open={this.openHandler} />
-        </React.Fragment>
-      );
+        </>
+      ); 
     } else if (this.state.searchPage) {
       page = (
-        <React.Fragment>
+        <>
           <NavSearch show={this.searchBarHandler} />
-        </React.Fragment>
+        </>
       );
     } else if (this.state.signin) {
       signinPage = (
-        <React.Fragment>
+        <>
           <NavSignin signup={this.signupHandler}/>
           <Backdrop open={this.signinClose} />
-          {/* <Backdrop open={this.signInHandler} /> */}
-        </React.Fragment>
+        </>
       );
     }else if (!this.state.signup){
       signupPage = (
-        <React.Fragment>
+        <>
         <NavSignup signin={this.signInHandler}/>
         <Backdrop open={this.signupClose} />
-        {/* <Backdrop open={this.signupHandler} /> */}
-        </React.Fragment>
+        </>
       ); 
-    } else if (this.state.shopcart || this.props.menuDetail.shopCartReducer) {
+    } else if (this.state.shopcart ) {
       shopcartPage = (
-        <React.Fragment>
+        <>
           <NavShopcart show={this.shopcartHandler} signup={this.signupOpen} />
-          <Backdrop open={this.shopcartHandler} />
-        </React.Fragment>
+          {/* <Backdrop open={this.shopcartHandler} /> */}
+        </>
       );
-    } 
+    }
+    //  else if (this.state.shopcart || this.props.menuDetail.shopCartReducer) {
+    //   shopcartPage = (
+    //     <React.Fragment>
+    //       <NavShopcart show={this.shopcartHandler} signup={this.signupOpen} />
+          
+    //     </React.Fragment>
+    //   );
  
     return (
       <Router>
