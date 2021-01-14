@@ -1,8 +1,21 @@
 import React from "react";
+import {useDispatch, useSelector} from "react-redux";
 import "./backdrop.scss";
 
-const backdrop = props => {
-  return <div className="backdrop" onClick={props.open}></div>;
-};
+const Backdrop = props => {
+ 
+  const userLogin = useSelector((state) => state.userLogin)
+  const { loading, error, userInfo }  = userLogin
 
-export default backdrop;
+  return (
+    <>
+    {/* {userInfo ? (
+      null
+    ): ( */}
+      <div className="backdrop" onClick={props.open}></div>
+    {/* )} */}
+    </>
+  ) ;
+};
+ 
+export default Backdrop;

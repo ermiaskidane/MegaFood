@@ -1,0 +1,123 @@
+@import "../../style/config";
+.placeOrder {
+  margin-top: 118.92px;
+  margin-bottom: 3rem;
+  font-family: $font-secondary;
+  color: $color-light-black-1;
+
+  @media only screen and (max-width: $bp-medium) {
+    margin-top: 70px;
+  }
+
+  h2 {
+    display: flex;
+    margin: 1rem auto;
+
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+
+  &__columns {
+    width: 90%;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-column-gap: 1.6rem;
+    margin-top: 2rem;
+
+    @media only screen and (max-width: $bp-smaller) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(2, max-content);
+    }
+  }
+
+  &__column1 {
+    &--address p,
+    &--payment p {
+      color: $color-gray-dark-1;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid $color-grey-dark-3;
+    }
+
+    @media only screen and (max-width: $bp-smaller) {
+      margin-bottom: 3rem;
+      // margin-top: 2rem;
+    }
+  }
+
+  .orderItem--detail {
+    .orderItem--lists {
+      list-style: none;
+
+      display: grid;
+      grid-template-columns: minmax(30px, 40px) 2fr 1fr;
+      align-items: bottom;
+    }
+
+    & li img {
+      width: 35px;
+      height: 25px;
+      border-radius: 3px;
+    }
+
+    & li a {
+      text-decoration: none;
+      color: $color-gray-dark-1;
+    }
+    & li:nth-child(2) {
+      padding-left: 1.5rem;
+    }
+
+    // & li:last-child {
+    //   font-family: $font-primary;
+    // }
+
+    & li {
+      padding: 10px 0;
+      border-bottom: 1px solid $color-grey-dark-3;
+    }
+  }
+
+  &__column2 {
+    .summary--lists {
+      list-style: none;
+      border: 1px solid $color-grey-dark-3;
+    }
+
+    .summary--lists li {
+      border-bottom: 1px solid $color-grey-dark-3;
+      padding: 10px 0;
+
+      padding-left: 1rem;
+      display: flex;
+      justify-content: space-between;
+
+      span {
+        margin: 0 auto;
+        font-family: $font-primary;
+      }
+    }
+
+    .summary--lists li:last-child {
+      border-bottom: none;
+
+      & button {
+        width: 100%;
+        margin-right: 1rem;
+        // margin: 0 auto;
+      }
+    }
+    .btn--block {
+      display: block;
+      margin-top: 1rem;
+      padding: 0.8rem 0.6rem;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+  }
+}

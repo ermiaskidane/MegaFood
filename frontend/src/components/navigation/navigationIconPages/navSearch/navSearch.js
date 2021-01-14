@@ -1,6 +1,6 @@
 import React from "react";
 import "./navSearch.scss";
-
+ 
 import Sprite from "../../../../assets/images/sprite.svg";
 
 const navSreach = props => {

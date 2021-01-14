@@ -71,6 +71,9 @@
 
         border-bottom: 2px solid #dbdbdb;
       }
+      .price {
+        font-family: $font-primary;
+      }
 
       ul li > :not(:first-child) {
         padding-top: 0.5rem;
