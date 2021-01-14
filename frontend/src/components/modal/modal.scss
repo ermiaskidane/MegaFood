@@ -33,9 +33,11 @@
     li {
       cursor: pointer;
     }
-    li:first-child {
+    
+    .modal__name {
       color: $color-primary-4;
     }
+    
     li:not(:last-of-type) {
       padding-bottom: 1.2em;
     }
