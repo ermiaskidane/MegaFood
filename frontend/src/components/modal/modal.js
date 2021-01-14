@@ -23,7 +23,7 @@ const Modal = props => {
       <div className="modal__lists">
         <ul className="modal__list">
           {userInfo ? (
-            <li>User: {userInfo.name}</li>
+            <li className="modal__name">User: {userInfo.name}</li>
           ): (
             null
           )}
