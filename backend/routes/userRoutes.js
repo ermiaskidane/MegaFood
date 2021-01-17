@@ -3,7 +3,6 @@ import {
     authUser,
     registerUser
    } from "../controllers/userController.js"
-// const userController = require("../controllers/userController");
 
 const router = express.Router()
 

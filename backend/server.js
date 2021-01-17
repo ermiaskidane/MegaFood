@@ -2,10 +2,7 @@ import express from "express"
 import dotenv from "dotenv"
 import colors from "colors"
  
-// const menus = require("./data/menus") 
 import {menus} from "./data/menus.js"
-// const connectDB = require("./config/db")
-// const userRouters = require("./routes/userRoutes")
 import connectDB from "./config/db.js"
 import userRoutes from "./routes/userRoutes.js"
 import menuRoutes from "./routes/menuRoutes.js"
@@ -26,12 +23,6 @@ app.get("/", (req, res) => {
 })
  
 app.use("/api/homeScreen", menuRoutes)
-
-// app.get("/api/menus/:id", (req, res) => {
-//   const menu = menus.find((m) => m._id ===req.params.id)
-
-//   res.json(menu)
-// })
 
 app.use("/api/shop", shopRoutes)
 
