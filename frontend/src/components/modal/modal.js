@@ -1,13 +1,39 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux"
 import "./modal.scss";
 import { NavLink } from "react-router-dom";
 import Sprite from "../../assets/images/sprite.svg";
 
-const modal = props => {
+import { logout } from "../../store/actions/userActions";
+ 
+const Modal = props => {
+
+  const dispatch = useDispatch()
+
+  const userLogin = useSelector((state) => state.userLogin)
+  const { userInfo } = userLogin
+
+  const logoutHandler = () => {
+    console.log("logout")
+    dispatch(logout())
+  }
+
   return (
     <div className="modal">
       <div className="modal__lists">
         <ul className="modal__list">
+          {userInfo ? (
+            <li className="modal__name">User: {userInfo.name}</li>
+          ): (
+            null
+          )}
+          {userInfo ? (
+            <li onClick={logoutHandler}>LogOut</li>
+          ): (
+            <li onClick={props.signin}>
+          Login
+          </li>
+          )}
           <li>
             <NavLink to="/">Home</NavLink>
           </li>
@@ -19,9 +45,6 @@ const modal = props => {
           </li>
           <li>
             <NavLink to="/contact">Contact</NavLink>
-          </li>
-          <li onClick={props.signin}>
-          Login
           </li>
         </ul>
       </div>
@@ -36,4 +59,4 @@ const modal = props => {
   );
 };
 
-export default modal;
+export default Modal;

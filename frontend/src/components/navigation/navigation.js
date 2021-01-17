@@ -7,7 +7,7 @@ import { logout } from "../../store/actions/userActions";
 import Sprite from "../../assets/images/sprite.svg";
 
 const Navigation = props => {
-
+ 
   const dispatch = useDispatch()
 
   const userLogin = useSelector(state => state.userLogin)
@@ -33,7 +33,7 @@ const Navigation = props => {
         <nav className="header__nav">
           <div className="header__nav--menu">
             <ul className="header__nav--list">
-              <li>
+              <li> 
                 <NavLink to="/">Home</NavLink>
               </li>
               <li>
@@ -60,7 +60,7 @@ const Navigation = props => {
               <svg onClick={props.signup}>
               <use xlinkHref={`${Sprite}#icon-login`} />
             </svg>
-            )}
+            )} 
             <svg onClick={props.shopcart}>
               <use xlinkHref={`${Sprite}#icon-shopping-bag`} />
             </svg>
@@ -69,7 +69,7 @@ const Navigation = props => {
             ) : (
               null
             )}
-            
+             
           </div>
         </nav>
       </div> 

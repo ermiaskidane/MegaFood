@@ -21,7 +21,7 @@ const NavSignin = (props) => {
   const { loading, error, userInfo }  = userLogin
 
   // const redirect = location.search ? location.search.split("=")[1]: "/"
-  const redirect =  "/shop"
+  const redirect =  "/"
 
 
   useEffect(() => {
@@ -36,7 +36,7 @@ const NavSignin = (props) => {
     dispatch(login(email, password))
   }
   return (
-    <>
+    <> 
     {
       userInfo ? (
         null

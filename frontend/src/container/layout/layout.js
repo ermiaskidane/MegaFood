@@ -3,7 +3,7 @@ import Navigation from "../../components/navigation/navigation";
 import Footer from "../../components/footer/footer";
 
 import "./layout.scss";
-
+  
 const Layout = (props) => {
     return (
       <>
@@ -17,6 +17,6 @@ const Layout = (props) => {
         <Footer />
       </>
     );
-} 
+}  
 
 export default Layout;

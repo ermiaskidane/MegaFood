@@ -23,12 +23,12 @@ const NavShopcart = ({show, signup}) => {
     console.log(id)
     dispatch(removeFromMenus(id))
   }
-
+ 
   const checkOutHandler = () => {
     // console.log("shipping")
     history.push("/shipping")
   }
-  
+   
   console.log(menusItem)
   return (
     <div className="navShopcart">
@@ -50,7 +50,7 @@ const NavShopcart = ({show, signup}) => {
             <NavLink to="/shop">Go to The Shop</NavLink>
           </button>
       </div>
-    ):
+    ): 
     (menusItem.map((item) => 
     (<div className="navShopcart__detail--menu" key={item.menu}>
       <ul>

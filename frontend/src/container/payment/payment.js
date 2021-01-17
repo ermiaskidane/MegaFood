@@ -29,7 +29,7 @@ const Payment = ({ history}) => {
              <form onSubmit={submitHandler}>
                  <div className="payment__form">
                     <input type="radio" className="payment__radio1"  value="paypal" id="paypal" name="paymentMethod"  checked onChange={(e) => setPaymentMethod(e.target.value)}/>
-                    <label for="paypal" className="payment__label">PayPal Or Credit Card</label>
+                    <label htmlFor="paypal" className="payment__label">PayPal Or Credit Card</label>
                     <button type="submit" className="payment--button">Continue</button>
                  </div>
              </form>

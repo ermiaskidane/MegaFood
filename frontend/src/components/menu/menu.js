@@ -17,7 +17,7 @@ const Menu = () => {
   useEffect(() => {
     const fetchMenus = async () => {
       const { data } = await axios.get("/api/homeScreen/menus")
-
+ 
       setMenus(data)
     }
     fetchMenus()
