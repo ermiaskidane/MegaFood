@@ -28,7 +28,7 @@ const NavShopcart = ({show, signup}) => {
     // console.log("shipping")
     history.push("/shipping")
   }
-  
+   
   console.log(menusItem)
   return (
     <div className="navShopcart">

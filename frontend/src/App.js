@@ -22,7 +22,7 @@ import NavShopcart from "./components/navigation/navigationIconPages/navShopcart
 
 import Layout from "./container/layout/layout";
 
-import "./App.scss";
+import "./App.scss"; 
 
 class App extends Component {
   state = {
@@ -121,7 +121,7 @@ class App extends Component {
     } else if (this.state.searchPage) {
       page = (
         <>
-          <NavSearch show={this.searchBarHandler} />
+          <NavSearch show={this.searchBarHandler} /> 
         </>
       );
     } else if (this.state.signin) {
@@ -157,7 +157,7 @@ class App extends Component {
           signup={this.signupOpen}
           shopcart={this.shopcartHandler}
         >
-          {modals}
+          {modals} 
           {page}
           {signinPage}
           {signupPage}
