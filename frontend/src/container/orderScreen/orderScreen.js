@@ -69,7 +69,6 @@ const OrderScreen = ({ match, history }) => {
     }, [dispatch, order, orderId, successPay, userInfo])
 
     const successPaymentHandler = (paymentResult) => {
-        console.log(paymentResult)
         dispatch(payOrder(orderId, paymentResult))
       } 
     return loading ? (
@@ -83,7 +82,7 @@ const OrderScreen = ({ match, history }) => {
                 <div className="orderScreen__columns">
                     <div className="orderScreen__column1">
                         <div className="orderScreen__column1--shipping">
-                            <h2>Shipping</h2>
+                            <h2>Delivery Address</h2>
                             <p>
                                 Name: {order.user.name}
                             </p>
@@ -154,7 +153,7 @@ const OrderScreen = ({ match, history }) => {
                                 <h2>Order Summary</h2>
                             </li>
                             <li>Items  <span>${order.itemsPrice}</span></li>
-                            <li>Shipping  <span>${order.shippingPrice}</span></li>
+                            <li>Delivery Fee  <span>${order.shippingPrice}</span></li>
                             <li>Total  <span>${order.totalPrice}</span></li>
                             <li>
                                 {error && <Message className="danger">{error}</Message>}

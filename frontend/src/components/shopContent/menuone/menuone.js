@@ -48,7 +48,7 @@ const menuOne = (props) => {
             {/* ##### purchase Content ##### */}
             <p>{m.name}</p>
             <p>
-              <s>${m.oldPrice}</s> <span>${m.price}</span>
+              <s>${(m.oldPrice).toFixed(2)}</s> <span>${(m.price).toFixed(2)}</span>
             </p>
           </div>
         );

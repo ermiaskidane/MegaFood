@@ -25,7 +25,7 @@ const Shipping = ({history}) => {
   return (
       <div className="shipping">
         <CheckoutSteps step1 step2 />
-        <h1>Shipping</h1>
+        <h1>Delivering</h1>
 
         <form  onSubmit={submitHandler}>
             <div className="shipping__form">

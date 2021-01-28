@@ -19,10 +19,10 @@ const CheckoutSteps = ({ step1, step2, step3, step4 }) => {
       <div className="checkoutStep__content">
         {step2 ? (
           <NavLink to='/shipping'>
-            <span>Shipping</span>
+            <span>Delivering</span>
           </NavLink>
         ) : (
-          <span style={{color: "#9da1a5"}}  disabled>Shipping</span>
+          <span style={{color: "#9da1a5"}}  disabled>Delivering</span>
         )}
       </div>
 

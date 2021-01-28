@@ -17,7 +17,6 @@ const Purchase = () => {
     
   }, [])
 
-  console.log(purchase)
   return (
     
     <div className="purchase">

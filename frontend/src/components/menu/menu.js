@@ -22,7 +22,7 @@ const Menu = () => {
     }
     fetchMenus()
   }, [])
-
+ 
   const addToCartHandler = (id, qty) => {
     console.log(id)
     dispatch(detailMenus(id, qty))
@@ -80,7 +80,7 @@ const Menu = () => {
           ))}
         </div>
     </div>
-  );
+  ); 
 };
 
 export default Menu;
