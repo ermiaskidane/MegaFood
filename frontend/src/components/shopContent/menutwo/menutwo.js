@@ -50,8 +50,8 @@ const menuTwo = ({content}) => {
             {/* ##### purchase Content ##### */}
             <p>{ms.name}</p>
             <p>
-              {ms.oldPrice ? <s>${ms.oldPrice}</s> : null}
-              <span style={{ paddingLeft: "0.3rem" }}>${ms.price}</span>
+              {ms.oldPrice ? <s>${(ms.oldPrice).toFixed(2)}</s> : null}
+              <span style={{ paddingLeft: "0.3rem" }}>${(ms.price).toFixed(2)}</span>
             </p>
           </div>
         ))}

@@ -54,7 +54,7 @@ const PlaceOrder = ({ history }) => {
             <div className="placeOrder__columns">
                 <div className="placeOrder__column1">
                     <div className="placeOrder__column1--address">
-                        <h2>Shipping</h2>
+                        <h2>Delivery Address</h2>
                     <p>
                       <strong>Address:</strong>
                       {menus.shippingAddress.address},
@@ -104,7 +104,7 @@ const PlaceOrder = ({ history }) => {
                                 <h2>Order Summary</h2>
                             </li>
                             <li>Items  <span>${menus.itemsPrice}</span></li>
-                            <li>Shipping  <span>${menus.shippingPrice}</span></li>
+                            <li>Delivery Fee  <span>${menus.shippingPrice}</span></li>
                             <li>Total  <span>${menus.totalPrice}</span></li>
                             <li>
                                 {error && <Message className="danger">{error}</Message>}
