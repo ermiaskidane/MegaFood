@@ -128,5 +128,11 @@
     input[type="submit"]:hover {
       background-color: $color-primary-4;
     }
+    
+    .messages {
+      color: #dd4040;
+      margin-top: -10px;
+      margin-bottom: 5px;
+    }
   }
 }
