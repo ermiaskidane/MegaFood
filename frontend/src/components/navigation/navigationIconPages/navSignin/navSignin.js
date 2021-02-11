@@ -44,7 +44,7 @@ const NavSignin = (props) => {
         <div className="navSignup">
       <div className="navSignup__detail">
         <h1>MegaFood</h1>
-        {error && <Message variant='danger'>{error}</Message>}
+        {error && <Message className='danger'>{error}</Message>}
         {loading && <Loader />}
         <h3>Great to have you back!</h3>
         <form  onSubmit={submitHandler}>
