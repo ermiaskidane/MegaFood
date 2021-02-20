@@ -1,1 +1,70 @@
+@import "../../style/config";
+.form {
+  margin-top: 118.92px;
+  font-family: $font-secondary;
+  color: $color-light-black-1;
+
+  h1 {
+    padding-top: 1rem;
+    text-align: center;
+  }
+
+  form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: max-content 1fr;
+    width: 70vw;
+    margin: 1rem auto 2rem auto;
+
+    @media only screen and (max-width: $bp-small) {
+      grid-template-rows: max-content 1fr 1fr;
+    }
+  }
+
+  &__fields {
+    grid-column: 1/-1;
+    grid-row: 1/2;
+    display: flex;
+    flex-direction: column;
+  }
+
+  input[type="text"] {
+    padding: 0.8rem 0;
+    padding-left: 0.6rem;
+    margin-bottom: 1rem;
+  }
+  textarea:first-of-type {
+    padding: 1.5rem 0;
+    padding-left: 0.6rem;
+    margin-bottom: 1rem;
+  }
+  textarea:last-of-type {
+    padding: 2rem 0;
+    padding-left: 0.6rem;
+    margin-bottom: 1rem;
+  }
+
+  a {
+    grid-row: 2/3;
+    text-decoration: none;
+    background: $color-grey-dark-4;
+    padding: 7px 1.2rem;
+    border-radius: 3px;
+    justify-self: self-end;
+    margin-right: 1rem;
+    outline: none;
+  }
+  button {
+    grid-row: 2/3;
+    justify-self: self-start;
+
+    margin-left: 1rem;
+    padding: 7px 1.5rem;
+    border-radius: 3px;
+    border: 1px solid $color-primary-4;
+    background-color: $color-primary-4;
+    outline: none;
+    cursor: pointer;
+  }
+}
 
