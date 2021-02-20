@@ -9,6 +9,7 @@ import Modal from "./components/modal/modal";
 import Backdrop from "./components/backdrop/backdrop";
 import Shop from "./container/shop/shop";
 import Feature from "./container/feature/feature";
+import Form from "./container/feature/form";
 import Contact from "./container/contact/contact";
 import Shipping from "./container/shipping/shipping";
 import Payment from "./container/payment/payment";
