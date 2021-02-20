@@ -169,6 +169,7 @@ class App extends Component {
             <Route path="/shipping" component={Shipping} />
             <Route path="/shop" component={Shop} />
             <Route path="/feature" component={Feature} />
+            <Route path="/addBlog" component={Form} />
             <Route path="/contact" component={Contact} />
             <Route path="/" exact component={MegaFood} />
             <Redirect to="/" />
