@@ -210,6 +210,11 @@ const Feature = () => {
                       Read More <span>&gt;</span>
                     </p>
                   </NavLink>
+                  <NavLink to="/addBlog">
+                    <p>
+                      Add <span>&gt;</span>
+                    </p>
+                  </NavLink>
                 </div>
               </div>
             </div>
